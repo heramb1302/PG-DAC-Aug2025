@@ -139,7 +139,7 @@
 
 ### **`printf()` in Java - Explanation with Examples**  
 
-#### ✅ What is `printf()` in Java?
+#### What is `printf()` in Java?
 The **`printf()`** method in Java is used to print formatted output to the console. It is a method of the **`PrintStream`** class, which is a part of the **`System.out`** stream.
 
 The method works similarly to **`printf()`** in C/C++ by formatting the output based on format specifiers.
