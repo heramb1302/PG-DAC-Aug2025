@@ -10,19 +10,7 @@ Topics:
 	-JDK vs JRE vs JVM
 	-Java Features
 	-Java Program Structure
-	
-	-Java Tokens
-	-Data Types
-	-Variables
-	-Operators
-	-User Input
-	-Decision Making
-	-Loops
 		
-Home-Work:
-Interview Questions:
-
-
 OOPJ : Java 
 100 Marks:
 	-40 marks : CCEE
