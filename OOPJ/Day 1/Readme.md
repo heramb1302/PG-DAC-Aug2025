@@ -178,7 +178,7 @@ System.out.printf(format, arguments);
 ### **JIT Compiler in Java - Key Points**
 - **Definition:** Converts bytecode into machine code at runtime to improve performance.
 - **Part of:** Java Virtual Machine (**JVM**).
-- **Purpose:** Speed up execution of frequently used code.
+- **Purpose:** Speed up the execution of frequently used code.
 - **Working Process:**
   - JVM first interprets bytecode line by line.
   - JIT detects **hotspot methods** (frequently used methods).
@@ -187,15 +187,7 @@ System.out.printf(format, arguments);
 
 ---
 
-### 🔑 **Types of JIT Compilers**
-- **Client JIT:** Faster startup, less optimization.
-- **Server JIT:** Slower startup, better optimization.
-- **C1 Compiler:** Basic optimizations.
-- **C2 Compiler:** Advanced optimizations.
-
----
-
-### ✅ **Advantages**
+### **Advantages**
 - Faster execution.
 - Adaptive performance optimization.
 - Code caching.
@@ -203,7 +195,7 @@ System.out.printf(format, arguments);
 
 ---
 
-### ❗ **Disadvantages**
+### **Disadvantages**
 - Higher memory usage.
 - Slight delay during initial compilation.
 - Best performance seen in long-running applications.
