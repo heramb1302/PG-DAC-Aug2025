@@ -1,0 +1,1514 @@
+-----------------------------------------
+Day 3: Programming Concepts of Java
+Date : 05-March-2025
+-----------------------------------------
+Topics: 
+	-Java Tokens
+	-Operators
+	-Separators
+	-Command Line arguments
+	-User Input
+	-Decision Making
+	-Loops
+	
+	
+## **1. Java Tokens**
+Tokens are the smallest units in a Java program. Java has the following types of tokens:
+
+###  **1.1 Keywords**
+- **Reserved words** used by Java.
+- Cannot be used as identifiers.
+  
+**Example:** `class, static, int, float, if, else, return, while`
+
+```java
+class Example {
+    public static void main(String[] args) {
+        int num = 10;  // 'int' is a keyword
+        System.out.println(num);
+    }
+}
+```
+
+---
+
+###  **1.2 Identifiers**
+- Names used for **variables, methods, classes, objects**.
+- Must start with a **letter (A-Z or a-z) or `_`, `$`**.
+- **Cannot be a keyword**.
+
+**Example:**
+```java
+int count = 5;   // Valid identifier
+String $name = "John"; // Valid identifier
+int 2num = 10;   // Invalid identifier (Cannot start with a number)
+```
+
+---
+
+###  **1.3 Literals**
+- **Constant values** assigned to variables.
+
+**Example:**
+```java
+int a = 100;       // Integer literal
+double pi = 3.14;  // Floating-point literal
+char c = 'A';      // Character literal
+boolean flag = true; // Boolean literal
+String str = "Java"; // String literal
+```
+
+---
+
+###  **1.4 Operators**
+
+1. Arithmetic Operators
+2. Relational Operators
+3. Logical Operators
+4. Bitwise Operator
+5. Assignment Operator
+6. Bit shift Operator
+- Symbols used for operations like **addition, subtraction, comparison, etc.**
+- **Types:** Arithmetic, Relational, Logical, Bitwise, Assignment.
+
+```java
+int sum = 5 + 3; // + is an operator
+boolean isTrue = (sum > 5); // > is an operator
+```
+
+---
+
+### ✅ **1.5 Separators**
+- Used to **structure the code**.
+
+| Separator | Usage |
+|-----------|--------|
+| `{}` | Block of code |
+| `()` | Method parameters |
+| `[]` | Array declaration |
+| `;` | End of statement |
+| `,` | Multiple declarations |
+| `.` | Access members |
+
+---
+
+
+Operators:
+Operators in Java are special symbols that perform operations on variables and values. Java provides several types of operators, categorized based on functionality.
+
+---
+
+## **1. Arithmetic Operators**
+- Used for mathematical calculations.
+
+### **Syntax**
+```java
+result = operand1 operator operand2;
+```
+
+### **Supported Operators**
+| Operator | Description  | Example  | Output |
+|----------|------------|---------|--------|
+| `+` | Addition  | `10 + 5` | 15 |
+| `-` | Subtraction  | `10 - 5` | 5 |
+| `*` | Multiplication | `10 * 5` | 50 |
+| `/` | Division | `10 / 5` | 2 |
+| `%` | Modulus (Remainder) | `10 % 3` | 1 |
+
+### **Example Program**
+```java
+public class ArithmeticOperators {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+    }
+}
+```
+
+---
+
+## **2. Relational (Comparison) Operators**
+- Used to compare two values and return a boolean (`true` or `false`).
+
+### **Syntax**
+```java
+result = operand1 operator operand2;
+```
+
+### **Supported Operators**
+| Operator | Description  | Example  | Output |
+|----------|------------|---------|--------|
+| `==` | Equal to  | `10 == 5` | false |
+| `!=` | Not equal to | `10 != 5` | true |
+| `>` | Greater than | `10 > 5` | true |
+| `<` | Less than | `10 < 5` | false |
+| `>=` | Greater than or equal to | `10 >= 5` | true |
+| `<=` | Less than or equal to | `10 <= 5` | false |
+
+### **Example Program**
+```java
+public class RelationalOperators {
+    public static void main(String[] args) {
+        int x = 10, y = 5;
+        System.out.println("Equal: " + (x == y));
+        System.out.println("Not Equal: " + (x != y));
+        System.out.println("Greater than: " + (x > y));
+        System.out.println("Less than: " + (x < y));
+        System.out.println("Greater or Equal: " + (x >= y));
+        System.out.println("Less or Equal: " + (x <= y));
+    }
+}
+```
+
+---
+
+## **3. Logical Operators**
+- Used for boolean (true/false) logic.
+
+### **Syntax**
+```java
+result = operand1 operator operand2;
+```
+
+### **Supported Operators**
+| Operator | Description | Example | Output |
+|----------|------------|---------|--------|
+| `&&` | Logical AND | `(10 > 5) && (5 < 10)` | true |
+| `||` | Logical OR | `(10 > 5) || (5 > 10)` | true |
+| `!` | Logical NOT | `!(10 > 5)` | false |
+
+### **Example Program**
+```java
+public class LogicalOperators {
+    public static void main(String[] args) {
+        boolean a = true, b = false;
+        System.out.println("AND (&&): " + (a && b));
+        System.out.println("OR (||): " + (a || b));
+        System.out.println("NOT (!a): " + (!a));
+    }
+}
+```
+
+---
+## **5. Assignment Operators**
+- Used to assign values to variables.
+
+### **Syntax**
+```java
+variable operator= value;
+```
+
+### **Supported Operators**
+| Operator | Description | Example | Equivalent |
+|----------|------------|---------|------------|
+| `=` | Assign | `x = 5` | x = 5 |
+| `+=` | Add and assign | `x += 5` | x = x + 5 |
+| `-=` | Subtract and assign | `x -= 5` | x = x - 5 |
+| `*=` | Multiply and assign | `x *= 5` | x = x * 5 |
+| `/=` | Divide and assign | `x /= 5` | x = x / 5 |
+| `%=` | Modulus and assign | `x %= 5` | x = x % 5 |
+
+### **Example Program**
+```java
+public class AssignmentOperators {
+    public static void main(String[] args) {
+        int x = 10;
+        x += 5;  // x = x + 5
+        System.out.println("After +=: " + x);
+        x -= 3;  // x = x - 3
+        System.out.println("After -=: " + x);
+        x *= 2;  // x = x * 2
+        System.out.println("After *=: " + x);
+    }
+}
+```
+## **4. Bitwise Operators**
+- Work at the bit level and are used for efficient computations.
+![image](https://github.com/user-attachments/assets/6e346666-0f60-4144-9597-a8d8dace2ade)
+
+### **Supported Operators**
+| Operator | Description | Example | Output |
+|----------|------------|---------|--------|
+| `&` | Bitwise AND | `5 & 3` (0101 & 0011) | 1 |
+| `|` | Bitwise OR | `5 | 3` (0101 | 0011) | 7 |
+| `^` | Bitwise XOR | `5 ^ 3` (0101 ^ 0011) | 6 |
+| `~` | Bitwise NOT | `~5` (~0101) | -6 |
+| `<<` | Left Shift | `5 << 1` | 10 |
+| `>>` | Right Shift | `5 >> 1` | 2 |
+
+### **Example Program**
+```java
+public class BitwiseOperators {
+    public static void main(String[] args) {
+        int a = 5, b = 3;
+        System.out.println("AND (&): " + (a & b));
+        System.out.println("OR (|): " + (a | b));
+        System.out.println("XOR (^): " + (a ^ b));
+        System.out.println("NOT (~a): " + (~a));
+        System.out.println("Left Shift (<<): " + (a << 1));
+        System.out.println("Right Shift (>>): " + (a >> 1));
+    }
+}
+```
+---
+
+# **Bitwise Shift Operators in Java**
+Bitwise shift operators in Java are used to **manipulate individual bits** of an integer value. They work by shifting the bits of an operand left or right, filling the vacated bits with zeros or sign bits.
+
+---
+
+## **Types of Bitwise Shift Operators**
+Java provides **three** types of bitwise shift operators:
+
+| **Operator** | **Description** | **Example** |
+|-------------|----------------|-------------|
+| `<<` (Left Shift) | Shifts bits to the **left**, filling zeros on the right | `a << n` shifts `a` left by `n` places |
+| `>>` (Right Shift) | Shifts bits to the **right**, maintaining the **sign bit** | `a >> n` shifts `a` right by `n` places |
+| `>>>` (Unsigned Right Shift) | Shifts bits to the **right**, filling zeros on the left | `a >>> n` shifts `a` right by `n` places, regardless of sign |
+
+---
+
+## **2. Left Shift Operator (`<<`)**
+- Moves all bits of a number to the **left** by the specified number of places.
+- Each shift **doubles** the value (`x << 1` is equivalent to `x * 2`).
+- **Vacant positions are filled with `0`**.
+
+### **Syntax:**
+```java
+result = number << shift_count;
+```
+
+### **Example:**
+```java
+public class LeftShiftExample {
+    public static void main(String[] args) {
+        int num = 5;  // Binary: 0000 0101
+        int result = num << 2;  // Left shift by 2 places
+
+        System.out.println("Original number: " + num);      // Output: 5
+        System.out.println("After left shift: " + result);  // Output: 20
+    }
+}
+```
+
+## **3. Right Shift Operator (`>>`)**
+- Moves bits **to the right**, preserving the **sign bit** (MSB).
+- Each shift **divides** the value by `2` (`x >> 1` is equivalent to `x / 2`).
+- **Vacant positions are filled with `1` if the number is negative (sign extension)**.
+
+### **Syntax:**
+```java
+result = number >> shift_count;
+```
+
+### **Example:**
+```java
+public class RightShiftExample {
+    public static void main(String[] args) {
+        int num = 20;  // Binary: 0001 0100
+        int result = num >> 2;  // Right shift by 2 places
+
+        System.out.println("Original number: " + num);      // Output: 20
+        System.out.println("After right shift: " + result); // Output: 5
+    }
+}
+```
+
+
+
+#### **Example with Negative Numbers:**
+```java
+public class RightShiftNegativeExample {
+    public static void main(String[] args) {
+        int num = -20;  // Binary: 1110 1100 (for negative representation)
+        int result = num >> 2;  // Right shift by 2 places
+
+        System.out.println("Original number: " + num);
+        System.out.println("After right shift: " + result);
+    }
+}
+```
+### **Explanation:**
+- `-20` in **binary** (32-bit) → `1111 1111 1111 1111 1111 1111 1110 1100`
+- `-20 >> 2` → `1111 1111 1111 1111 1111 1111 1111 1011` (Preserves sign)
+- **Result:** `-5` (sign bit is preserved)
+
+---
+
+## **4. Unsigned Right Shift Operator (`>>>`)**
+- Moves bits **to the right**, but always fills with **zeros** (ignores sign).
+- **Used only for non-negative shifting operations**.
+
+### **Syntax:**
+```java
+result = number >>> shift_count;
+```
+
+### **Example:**
+```java
+public class UnsignedRightShiftExample {
+    public static void main(String[] args) {
+        int num = -20;  // Negative number
+        int result = num >>> 2;  // Unsigned right shift by 2 places
+
+        System.out.println("Original number: " + num);
+        System.out.println("After unsigned right shift: " + result);
+    }
+}
+```
+
+### **Explanation:**
+- `-20` in **binary** (32-bit) → `1111 1111 1111 1111 1111 1111 1110 1100`
+- `-20 >>> 2` → `0011 1111 1111 1111 1111 1111 1111 1011` (Fills with zeros)
+- **Result:** `1073741819` (Huge positive number)
+
+
+```java
+  import java.util.Scanner;
+class IfElseDemo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any num");
+		int num = sc.nextInt();
+		if(num%2==0){
+			System.out.println(num+" is even");
+		}else{		
+			System.out.println(num+" is odd");
+		}
+	}	
+}
+
+# Program 
+  import java.util.Scanner;
+class IfElseDemo1{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any 0 or 1");
+		int num = sc.nextInt();
+		if(num == 0 || num == 1){
+			System.out.println("good boy");
+		}else{		
+			System.out.println("try again");
+		}
+	}	
+}
+```
+## **7. Ternary Operator (`?:`)**
+- Shorthand for `if-else`.
+![image](https://github.com/user-attachments/assets/6db55d37-91eb-4a5b-926b-5494b3bc70e0)
+
+### **Syntax**
+```java
+result = (condition) ? value_if_true : value_if_false;
+```
+
+### **Example**
+```java
+public class TernaryOperator {
+    public static void main(String[] args) {
+        int num = 10;
+        String result = (num % 2 == 0) ? "Even" : "Odd";
+        System.out.println("Number is: " + result);
+    }
+}
+```
+
+---
+
+### **Real-Time Example**
+```java
+public class DiscountCalculator {
+    public static void main(String[] args) {
+        double price = 1200;
+        double discount = (price > 1000) ? price * 0.10 : price * 0.05;
+        System.out.println("Discount: " + discount);
+    }
+}
+```
+# Program 
+```java
+  class TernaryOpe{
+	public static void main(String args[]){
+		int i = 121;
+
+		String s = (i%2==0) ? i+" is even" : i + " is odd";
+		System.out.println(s);
+		boolean b = (i%2==0) ? true : false;
+		System.out.println(b);
+	}	
+}
+
+---
+import java.util.Scanner;
+class SwitchDemo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any day no");
+		byte dayNo = sc.nextByte();
+		switch(dayNo){
+			case 1 :
+				System.out.println("mon");
+				break;
+			case 2 :
+				System.out.println("tues");
+				break;
+			case 3 :
+				System.out.println("wed");
+				break;
+			case 4 :
+				System.out.println("thus");
+				break;
+			case 5 :
+				System.out.println("fri");
+				break;
+			case 6 :
+				System.out.println("sat");
+				break;
+			case 7 :
+				System.out.println("sun");
+				break;
+			default :
+				System.out.println("not a day name");
+			
+		}
+	}
+}
+# Program
+import java.util.Scanner;
+class SwitchDemo1{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any character");
+		char ch = sc.next().charAt(0);
+		switch(ch){
+			case 'a' :
+			case 'e' :
+			case 'i' :
+			case 'o' :
+			case 'u' :
+			System.out.println(ch+" is a vowel lower");
+				break;
+			case 'A' :
+			case 'E' :
+			case 'I' :
+			case 'O' :
+			case 'U' :
+			System.out.println(ch+" is a vowel UPPER");
+				break;			
+			default :
+				System.out.println("not a vowel");
+			
+		}
+	}
+}
+
+
+
+### ✅ **5.3 Loops (For, While, Do-While)**
+```java
+// For loop
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+
+// While loop
+int j = 1;
+while (j <= 5) {
+    System.out.println(j);
+    j++;
+}
+
+// Do-While loop
+int k = 1;
+do {
+    System.out.println(k);
+    k++;
+} while (k <= 5);
+
+# Program
+class ForDemo{
+	public static void main(String args[]){
+		for(int i=0,j=9;i<10;i++,j--){
+			System.out.println(i+"  "+j);
+		}
+	}
+}
+
+# Program
+class ForDemo1{
+	public static void main(String args[]){
+		for(int i=1; i<=5 ;i++){
+			System.out.println(i);
+				if(i==3)
+					break;
+			System.out.println(i);
+		}
+	}
+}
+
+# Program
+class ForDemo2{
+	public static void main(String args[]){
+		for(int i=1; i<=5 ;i++){
+			System.out.println(i);
+				if(i==3)
+					continue;
+			System.out.println(i);
+		}
+	}
+}
+
+# Program
+class ForDemo3{
+	public static void main(String args[]){
+
+		outer:
+		for(int i=1; i<=5 ;i++){
+			abc:
+			for(int j=1;j<=5;j++){
+				System.out.print(" "+j);
+				if(j==3)
+					break abc;
+				
+			}
+			System.out.println("");
+
+		}
+		System.out.println("okkk");
+		
+	}
+}
+
+# Program
+import java.util.Scanner;
+class WhileDemo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any num");
+		int n = sc.nextInt();
+		while(n<10){
+			System.out.println(n);
+			n++;
+		}
+	}
+}
+
+# Program
+import java.util.Scanner;
+class DoWhileDemo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any num");
+		int n = sc.nextInt();
+		do{
+			System.out.println(n);
+			n++;
+		}while(n<10);
+	}
+}
+```
+---
+Here are **5 tricky interview questions** using **for** and **while** loops in Java, along with explanations.
+
+---
+
+### **1. Infinite Loop - What's the Output?**
+```java
+public class InfiniteLoop {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i--) { // i is decreasing instead of increasing
+            System.out.println("Looping: " + i);
+        }
+    }
+}
+```
+**Question:**  
+What will happen when this program runs?
+
+**Options:**  
+A) Prints `Looping:` from 0 to 4  
+B) Prints `Looping:` infinitely  
+C) Compilation error  
+D) Runtime error  
+
+✅ **Answer: B) Prints infinitely**  
+📌 **Explanation:** The loop condition is `i < 5`, but `i--` makes `i` decrease (`0, -1, -2, ...`). It will **never** reach `5`, causing an **infinite loop**.
+
+---
+
+### **2. Skipping Iterations - What’s the Output?**
+```java
+public class SkipLoop {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            if (i == 2) continue; // Skips iteration when i == 2
+            System.out.print(i + " ");
+        }
+    }
+}
+```
+**Question:**  
+What will be the output?
+
+**Options:**  
+A) `0 1 2 3 4`  
+B) `0 1 3 4`  
+C) `0 1 2 3`  
+D) Compilation error  
+
+✅ **Answer: B) `0 1 3 4`**  
+📌 **Explanation:** The `continue` statement skips the iteration when `i == 2`, so `2` is not printed.
+
+---
+
+### **3. Nested Loops - How Many Stars?**
+```java
+public class StarPattern {
+    public static void main(String[] args) {
+        int count = 0;
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.print("* ");
+                count++;
+            }
+            System.out.println();
+        }
+        System.out.println("Total stars printed: " + count);
+    }
+}
+```
+**Question:**  
+How many stars (`*`) will be printed?
+
+**Options:**  
+A) `3`  
+B) `6`  
+C) `9`  
+D) `12`  
+
+✅ **Answer: C) `9`**  
+📌 **Explanation:**  
+- Outer loop runs **3 times** (`i = 1 to 3`).
+- Inner loop runs **3 times** per outer loop.
+- **Total executions:** `3 × 3 = 9` stars printed.
+
+---
+
+### **4. Reverse a Number Using While Loop**
+```java
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int num = 12345;
+        int rev = 0;
+
+        while (num > 0) {
+            rev = rev * 10 + num % 10;
+            num = num / 10;
+        }
+        System.out.println("Reversed Number: " + rev);
+    }
+}
+```
+**Question:**  
+What will be the output?
+
+**Options:**  
+A) `54321`  
+B) `12345`  
+C) Compilation error  
+D) Runtime error  
+
+✅ **Answer: A) `54321`**  
+📌 **Explanation:**  
+- `num % 10` extracts the last digit.
+- `rev * 10` shifts the existing digits left.
+- `num / 10` removes the last digit.
+- The process repeats until `num == 0`.
+
+---
+
+### **5. Mysterious For Loop - What’s the Output?**
+```java
+public class MysteriousLoop {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; System.out.print(i + " "), i++);
+    }
+}
+```
+**Question:**  
+What will be the output?
+
+**Options:**  
+A) `0 1 2 3 4 `  
+B) `0 1 2 3 4` (no space at the end)  
+C) Compilation error  
+D) Runtime error  
+
+✅ **Answer: A) `0 1 2 3 4 `**  
+📌 **Explanation:**  
+- Instead of an **increment statement (`i++`) inside the loop body**, it is placed in the **update section** (`System.out.print(i + " "), i++`).
+- `System.out.print(i + " ")` prints `i` **before incrementing**.
+- Runs **5 times**, printing **`0 1 2 3 4`** with a space.
+
+---
+
+## **Summary of Tricks**
+| **Concept** | **Trick Used** |
+|------------|----------------|
+| Infinite Loop | `i--` instead of `i++` |
+| Skipping Iteration | `continue` statement |
+| Nested Loop | Counting total executions |
+| Number Reversal | Using `while` loop and `%` operator |
+| No Loop Body | Using `System.out.print()` in the update section |
+
+Would you like more **tricky Java loop puzzles**? 😊
+---
+## **2. Declaring Variables and Methods**
+
+### ✅ **2.1 Declaring Variables**
+- A **variable** is a name assigned to a memory location.
+- Variables must be **declared before use**.
+
+```java
+int age = 25;  // Integer variable
+double price = 99.99; // Floating-point variable
+char grade = 'A';  // Character variable
+```
+
+---
+
+### ✅ **2.2 Declaring Methods**
+- A **method** is a block of code that performs a specific task.
+
+**Syntax:**
+```java
+returnType methodName(parameters) {
+    // method body
+}
+```
+
+**Example:**
+```java
+class Calculator {
+    // Method declaration
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        System.out.println(obj.add(5, 10)); // Output: 15
+    }
+}
+```
+![image](https://github.com/user-attachments/assets/4982c13f-efa8-4d52-bc42-c5ce86ffcfab)
+## **Command Line Arguments in Java**
+Command line arguments allow us to **pass values to a Java program** at runtime when executing it from the terminal or command prompt. These arguments are passed as an array of strings (`String[] args`) to the `main` method.
+
+---
+
+### **1. How Command Line Arguments Work**
+- Arguments are **passed when running the program** from the command line.
+- They are stored in the `args` array (`String[] args`).
+- Each argument is treated as a **string**, even if it looks like a number.
+
+**Syntax for running a Java program with arguments:**
+```sh
+java ProgramName arg1 arg2 arg3 ...
+```
+
+---
+
+### **2. Example: Printing Command Line Arguments**
+```java
+public class CommandLineExample {
+    public static void main(String[] args) {
+        System.out.println("Number of Arguments: " + args.length);
+        
+        // Loop through arguments and print them
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Argument " + (i + 1) + ": " + args[i]);
+        }
+    }
+}
+```
+
+#### **Run the program from the command line:**
+```sh
+java CommandLineExample Hello Java 2024
+```
+
+#### **Output:**
+```
+Number of Arguments: 3
+Argument 1: Hello
+Argument 2: Java
+Argument 3: 2024
+```
+
+---
+
+### **3. Converting Arguments to Numeric Types**
+Since command line arguments are **always strings**, you must convert them manually to numbers if needed.
+
+#### **Example: Add Two Numbers Passed as Arguments**
+```java
+public class AddNumbers {
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            System.out.println("Please provide two numbers as arguments.");
+            return;
+        }
+
+        // Convert arguments to integers
+        int num1 = Integer.parseInt(args[0]);
+        int num2 = Integer.parseInt(args[1]);
+
+        // Perform addition
+        int sum = num1 + num2;
+        System.out.println("Sum: " + sum);
+    }
+}
+```
+
+#### **Run the program with numbers:**
+```sh
+java AddNumbers 10 20
+```
+
+#### **Output:**
+```
+Sum: 30
+```
+
+---
+
+### **4. Handling Errors (Exception Handling)**
+If a non-numeric argument is passed to `Integer.parseInt()`, it throws `NumberFormatException`. 
+
+#### **Example Handling Invalid Input:**
+```java
+public class SafeParsing {
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            System.out.println("Please provide two numbers.");
+            return;
+        }
+        
+        try {
+            int num1 = Integer.parseInt(args[0]);
+            int num2 = Integer.parseInt(args[1]);
+            System.out.println("Product: " + (num1 * num2));
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter valid numbers.");
+        }
+    }
+}
+```
+
+#### **Run with invalid input:**
+```sh
+java SafeParsing 10 abc
+```
+
+#### **Output:**
+```
+Error: Please enter valid numbers.
+```
+
+---
+
+### **5. Checking if Arguments are Provided**
+Always check `args.length` before accessing elements to avoid `ArrayIndexOutOfBoundsException`.
+
+```java
+if (args.length == 0) {
+    System.out.println("No arguments provided.");
+}
+```
+
+---
+
+### **6. Advantages of Command Line Arguments**
+✅ **Provides runtime input without user interaction**  
+✅ **Useful for automation and scripting**  
+✅ **Can be used in batch processing**  
+✅ **Helps in passing configuration values dynamically**  
+
+Would you like an example using **command line arguments in real-world applications**, like reading a file name from the command line? 😊
+```
+``` java
+  class CmdArgs{
+	public static void main(String args[]){
+		String s1 = args[0];
+		String s2 = args[1];
+		System.out.println(s1);
+		System.out.println(s2);
+	}	
+}
+
+
+# Program 
+  class CmdArgs1{
+	public static void main(String args[]){
+		String s1 = args[0];
+		String s2 = args[1];
+		int i = Integer.parseInt(s1);
+		int j = Integer.parseInt(s2);
+		int k = i + j;
+		System.out.println(k);
+		
+	}	
+}
+```
+![image](https://github.com/user-attachments/assets/3119acc6-4f6b-4ada-a12e-998d8f305066)
+
+## **Scanner Class in Java**
+The `Scanner` class in Java is part of the `java.util` package and is used for **taking input** from the user. It can read input from various sources, such as:
+- **Keyboard (Standard Input - `System.in`)**
+- **Files**
+- **Strings**
+
+---
+
+### **1. Importing Scanner Class**
+Since `Scanner` is part of `java.util`, it must be imported before use:
+```java
+import java.util.Scanner;
+```
+
+---
+
+### **2. Creating a Scanner Object**
+To read input from the **keyboard**, create a `Scanner` object:
+```java
+Scanner sc = new Scanner(System.in);
+```
+Here:
+- `System.in` → Reads input from the keyboard.
+
+---
+
+### **3. Reading Different Types of Input**
+| **Method** | **Reads** | **Example Input** |
+|------------|----------|------------------|
+| `nextInt()` | Integer | `10` |
+| `nextDouble()` | Double (decimal) | `3.14` |
+| `nextFloat()` | Float (decimal) | `5.75` |
+| `nextLong()` | Long Integer | `123456789` |
+| `nextBoolean()` | Boolean | `true` / `false` |
+| `next()` | Single word | `"Hello"` |
+| `nextLine()` | Full line (including spaces) | `"Hello World"` |
+
+---
+
+### **4. Example - Reading Different Inputs**
+```java
+import java.util.Scanner;
+
+public class ScannerExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); // Creating Scanner object
+        
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt(); // Reads integer
+        
+        System.out.print("Enter a decimal number: ");
+        double decimal = sc.nextDouble(); // Reads double
+        
+        sc.nextLine(); // Consume the leftover newline
+        
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine(); // Reads entire line
+        
+        System.out.println("Integer: " + num);
+        System.out.println("Decimal: " + decimal);
+        System.out.println("Text: " + text);
+        
+        sc.close(); // Close the scanner to prevent resource leak
+    }
+}
+```
+#### **Example Input:**
+```
+Enter an integer: 10
+Enter a decimal number: 3.14
+Enter a string: Hello Java
+```
+#### **Output:**
+```
+Integer: 10
+Decimal: 3.14
+Text: Hello Java
+```
+
+---
+
+### **5. Handling `nextLine()` After `nextInt()` or `nextDouble()`**
+If you use `nextInt()`, `nextDouble()`, etc., followed by `nextLine()`, **you must consume the leftover newline** using `sc.nextLine();`.
+
+**Problem Example:**
+```java
+System.out.print("Enter number: ");
+int num = sc.nextInt(); // Reads number
+
+System.out.print("Enter text: ");
+String text = sc.nextLine(); // Skipped!
+```
+**Why?**
+- `nextInt()` reads **only the number** and leaves the **newline (`\n`)** in the input buffer.
+- `nextLine()` reads **the remaining newline** instead of waiting for user input.
+
+**Solution:** Add an extra `sc.nextLine();` after `nextInt();`
+```java
+int num = sc.nextInt();
+sc.nextLine(); // Consume newline
+String text = sc.nextLine(); // Now works correctly
+```
+
+---
+
+### **6. Reading a Character (Single Character Input)**
+Java **does not** have a direct `nextChar()` method, so use:
+```java
+char ch = sc.next().charAt(0);
+```
+Example:
+```java
+System.out.print("Enter a character: ");
+char ch = sc.next().charAt(0); // Reads first character
+System.out.println("Character: " + ch);
+```
+
+---
+
+### **7. Closing the Scanner**
+Always close the `Scanner` object after use to prevent **memory leaks**:
+```java
+sc.close();
+```
+
+---
+
+## **Key Takeaways**
+✅ `Scanner` is used for taking input in Java.  
+✅ `next()` reads a **single word**, `nextLine()` reads an **entire line**.  
+✅ `nextInt()`, `nextDouble()`, etc., read **specific data types**.  
+✅ Always **use `sc.nextLine();` after `nextInt()`** to avoid newline issues.  
+✅ Always **close the Scanner** with `sc.close();` to release resources.  
+
+Would you like more advanced examples, like reading from a **file** using `Scanner`? 😊
+# Program
+``` java
+import java.util.Scanner;
+class InputDemo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ur name");
+		String nm = sc.next();
+		System.out.println("Welcome "+nm);
+	}	
+}
+
+```
+``` java
+
+# Program
+import java.util.Scanner;
+class InputDemo1{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number");
+		int i = sc.nextInt();
+		System.out.println("Enter another number");
+		int j = sc.nextInt();
+		int k = i + j;
+		System.out.println("sum = "+k);
+	}	
+}
+```
+
+
+```java
+# Program
+	import java.util.Scanner;
+class InputDemo2{
+	public static void main(String args[]){
+		Scanner sc = new Scanner("123 321");
+		
+		int i = sc.nextInt();
+		
+		int j = sc.nextInt();
+		int k = i + j;
+		System.out.println("sum = "+k);
+	}	
+}
+```
+### ✅ **2.2 Declaring Methods**
+- A **method** is a block of code that performs a specific task.
+
+**Syntax:**
+```java
+returnType methodName(parameters) {
+    // method body
+}
+```
+
+**Example:**
+```java
+class Calculator {
+    // Method declaration
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        System.out.println(obj.add(5, 10)); // Output: 15
+    }
+}
+```
+---
+## **Real-Time Example: Employee Management System**
+```java
+class Employee {
+    String name;
+    int age;
+    double salary;
+
+    // Constructor
+    Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    void display() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("Alice", 25, 50000);
+        emp1.display();
+    }
+}
+```
+**Output:**
+```
+Employee Name: Alice
+Age: 25
+Salary: 50000.0
+```
+
+---
+### **Different Ways to Define an Infinite Loop in Java**
+An **infinite loop** is a loop that never terminates unless the program is forcefully stopped or it encounters a `break` statement. Below are different ways to create an infinite loop in Java.
+
+---
+
+### **1. Using `for` Loop (Without Condition)**
+```java
+public class InfiniteForLoop {
+    public static void main(String[] args) {
+        for (;;) { // No condition, runs forever
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The `for` loop has **no initialization, condition, or increment**.
+- Since there's no condition to stop it, it **runs indefinitely**.
+
+---
+
+### **2. Using `while (true)`**
+```java
+public class InfiniteWhileLoop {
+    public static void main(String[] args) {
+        while (true) { // Always true, never stops
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The condition `true` **never becomes false**, so the loop **never exits**.
+
+---
+
+### **3. Using `do-while` Loop**
+```java
+public class InfiniteDoWhileLoop {
+    public static void main(String[] args) {
+        do {
+            System.out.println("This is an infinite loop.");
+        } while (true); // Always true
+    }
+}
+```
+✅ **Explanation:**  
+- The `do-while` loop executes **at least once** and continues because the condition is **always `true`**.
+
+---
+
+### **4. Using a `for` Loop with an Always True Condition**
+```java
+public class InfiniteForTrue {
+    public static void main(String[] args) {
+        for (; true ;) { // Condition is always true
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The loop condition is **explicitly `true`**, so it **never exits**.
+
+---
+
+### **5. Using a `for` Loop with an Ever-Decreasing Value**
+```java
+public class InfiniteForDecreasing {
+    public static void main(String[] args) {
+        for (int i = 0; i >= 0; i--) { // i decreases, never reaches stop condition
+            System.out.println("This is an infinite loop. i = " + i);
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- `i--` makes `i` continuously decrease.
+- Since `i` is always **greater than or equal to 0**, the loop **never stops**.
+
+---
+
+### **6. Using a `while` Loop with an Unchanging Variable**
+```java
+public class InfiniteWhileVariable {
+    public static void main(String[] args) {
+        int x = 5;
+        while (x == 5) { // x never changes
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The condition **`x == 5`** is always true.
+- Since `x` **never changes**, the loop runs forever.
+
+---
+
+### **7. Using Recursion (Function Calls Itself Infinitely)**
+```java
+public class InfiniteRecursion {
+    public static void infiniteMethod() {
+        System.out.println("This is an infinite recursive call.");
+        infiniteMethod(); // Function calls itself infinitely
+    }
+
+    public static void main(String[] args) {
+        infiniteMethod();
+    }
+}
+```
+✅ **Explanation:**  
+- The method **calls itself indefinitely**, causing **infinite recursion**.
+- Eventually, **StackOverflowError** will occur due to excessive function calls.
+
+---
+
+### **How to Stop an Infinite Loop?**
+You can **stop** an infinite loop using:
+- **`break` statement** inside the loop
+- Pressing **CTRL + C** (in terminal/command prompt)
+- Manually **stopping the program in an IDE**
+
+---
+
+### **Summary of Infinite Loop Methods**
+| **Loop Type** | **Code Example** | **Why it’s Infinite?** |
+|-------------|----------------|--------------------|
+| **For Loop** (No condition) | `for(;;) {}` | No stopping condition |
+| **While Loop** (Always `true`) | `while(true) {}` | Condition always true |
+| **Do-While Loop** | `do { } while(true);` | Runs at least once, always true |
+| **For Loop (Decreasing Value)** | `for(int i = 0; i >= 0; i--)` | Never meets exit condition |
+| **While Loop (Fixed Variable)** | `while(x == 5) {}` | `x` never changes |
+| **Recursion** | `method() calls itself` | Calls itself infinitely |
+
+
+
+---
+### **Different Ways to Define an Infinite Loop in Java**
+An **infinite loop** is a loop that never terminates unless the program is forcefully stopped or it encounters a `break` statement. Below are different ways to create an infinite loop in Java.
+
+---
+
+### **1. Using `for` Loop (Without Condition)**
+```java
+public class InfiniteForLoop {
+    public static void main(String[] args) {
+        for (;;) { // No condition, runs forever
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The `for` loop has **no initialization, condition, or increment**.
+- Since there's no condition to stop it, it **runs indefinitely**.
+
+---
+
+### **2. Using `while (true)`**
+```java
+public class InfiniteWhileLoop {
+    public static void main(String[] args) {
+        while (true) { // Always true, never stops
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The condition `true` **never becomes false**, so the loop **never exits**.
+
+---
+
+### **3. Using `do-while` Loop**
+```java
+public class InfiniteDoWhileLoop {
+    public static void main(String[] args) {
+        do {
+            System.out.println("This is an infinite loop.");
+        } while (true); // Always true
+    }
+}
+```
+✅ **Explanation:**  
+- The `do-while` loop executes **at least once** and continues because the condition is **always `true`**.
+
+---
+
+### **4. Using a `for` Loop with an Always True Condition**
+```java
+public class InfiniteForTrue {
+    public static void main(String[] args) {
+        for (; true ;) { // Condition is always true
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The loop condition is **explicitly `true`**, so it **never exits**.
+
+---
+
+### **5. Using a `for` Loop with an Ever-Decreasing Value**
+```java
+public class InfiniteForDecreasing {
+    public static void main(String[] args) {
+        for (int i = 0; i >= 0; i--) { // i decreases, never reaches stop condition
+            System.out.println("This is an infinite loop. i = " + i);
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- `i--` makes `i` continuously decrease.
+- Since `i` is always **greater than or equal to 0**, the loop **never stops**.
+
+---
+
+### **6. Using a `while` Loop with an Unchanging Variable**
+```java
+public class InfiniteWhileVariable {
+    public static void main(String[] args) {
+        int x = 5;
+        while (x == 5) { // x never changes
+            System.out.println("This is an infinite loop.");
+        }
+    }
+}
+```
+✅ **Explanation:**  
+- The condition **`x == 5`** is always true.
+- Since `x` **never changes**, the loop runs forever.
+
+---
+
+### **7. Using Recursion (Function Calls Itself Infinitely)**
+```java
+public class InfiniteRecursion {
+    public static void infiniteMethod() {
+        System.out.println("This is an infinite recursive call.");
+        infiniteMethod(); // Function calls itself infinitely
+    }
+
+    public static void main(String[] args) {
+        infiniteMethod();
+    }
+}
+```
+✅ **Explanation:**  
+- The method **calls itself indefinitely**, causing **infinite recursion**.
+- Eventually, **StackOverflowError** will occur due to excessive function calls.
+
+---
+
+### **How to Stop an Infinite Loop?**
+You can **stop** an infinite loop using:
+- **`break` statement** inside the loop
+- Pressing **CTRL + C** (in terminal/command prompt)
+- Manually **stopping the program in an IDE**
+
+---
+
+### **Summary of Infinite Loop Methods**
+| **Loop Type** | **Code Example** | **Why it’s Infinite?** |
+|-------------|----------------|--------------------|
+| **For Loop** (No condition) | `for(;;) {}` | No stopping condition |
+| **While Loop** (Always `true`) | `while(true) {}` | Condition always true |
+| **Do-While Loop** | `do { } while(true);` | Runs at least once, always true |
+| **For Loop (Decreasing Value)** | `for(int i = 0; i >= 0; i--)` | Never meets exit condition |
+| **While Loop (Fixed Variable)** | `while(x == 5) {}` | `x` never changes |
+| **Recursion** | `method() calls itself` | Calls itself infinitely |
+
+Would you like an **example of breaking out of an infinite loop** using `break`? 😊
+-------------------------
+7. Ternary Operator
+
+syntax:
+
+Variable = Exp1<condition> ? Exp2(True) : Exp3(False)
+
+Ex:
+	int num = 10;
+ String result = (num%2 == 0)? "Even" : "Odd";
+ SOP(result);
+ 
+Ex:
+
+double price =1200;
+SOP(double discount = (price > 1000) ? price * 0.10 : price * 0.05);
+
+=================================
+double price =1200;
+if(price >1000)
+{ 
+	p*10%
+}else
+{
+	p*5%;
+}
+SOP(discount);
