@@ -79,14 +79,12 @@ boolean isTrue = (sum > 5); // > is an operator
   -----------------
 - Used to structure the code.
 
-| Separator | Usage 				|
-|-----------|-----------------------|
-| `{}` 		| Block of code 		|
-| `()` 		| Method parameters 	|
-| `[]` 		| ay declaration 		|
-| `;` 		| End of statement		|
-| `,` 		| Multiple declarations |
-| `.` 		| Access members 		|
+ `{}` 	: Block of code 		
+ `()` 	: Method parameters 	
+ `[]` 	: arrayy declaration 		
+ `;`   : End of statement		
+ `,` 	:| Multiple declarations 
+ `.` 	: Access members 		
 
 ---
  Operators :
