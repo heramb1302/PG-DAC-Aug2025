@@ -201,3 +201,93 @@ class Test{
 */
 
 Solution: Use interfaces for multiple inheritance
+
+Interfaces:
+-------------
+-An interface in Java is a blueprint of a class.
+-It contains only abstract methods and constants by default (before Java 8).
+-It cannot have a method body, only method declarations.
+-Interfaces are used to achieve abstraction and multiple inheritance.
+-Java 8: Interfaces can have default and static methods.
+-Java 9: Interfaces can have private methods.
+
+Why to use interfaces in Java to:
+------------------------------------
+-Achieve abstraction
+-Enable multiple inheritance (behavior)
+-Support loose coupling & polymorphism
+-Create standard contracts
+-Allow flexible implementations
+-Make code scalable, maintainable, and extensible
+
+Interface defination include:
+--------------------------------
+interface CDAC{
+	// constant variable
+	int CONSTANT =100;//Implicitly public, static, final
+	
+	//abstract methods
+	void abstractMethod();
+	
+	//default method Java 8+:
+	default void show(){
+		System.out.println("Default method");
+	}
+	
+	//static method
+	static void display(){
+		System.out.println("Static method");
+	}
+	
+	//private method
+	private void showbuddy(){
+		System.out.println("Private method");
+	}
+}
+
+Multiple Inheritane by using interfaces:
+-----------------------------------------
+
+Java 8+: Lamba expression, Stream API
+
+Functional interfaces:
+-------------------------
+-'@FunctionalInterface' used as annotation in decalaration of functional interfaces
+-used for Lamba expression and Stream API
+Such interfaces can be designed with exactly one abstract method.
+
+Ex:
+@FunctionalInterface
+interface Hello{
+	void sayHello(String name);
+}
+
+Relationships (Associations:)
+-----------------
+IS-A: Inheriatnce
+-IS-A relationship is established through inheritance, where subclass inherits properties and behaviour from super class.
+-use 'extends' keyword
+
+HAS-A: Aggregation
+-HAS-A relationship(aggregation) occurs when one class contains an object of another class.
+
+Ex:
+Programmer IS-A Employee. (inheritance)
+Employee HAS-A Address.
+
+
+Aggregation:
+-------------
+IS-A relationship (Inheritance) is not valid, but HAS-A relationship.
+when an object contains another object as a part of its data.
+
+
+Association:
+-------------
+-It represents the relationship between 2 separate classes that are related but can exist independently.
+-Type: 
+	-One-one
+	-one-many
+	-many-one
+	-many-many
+
