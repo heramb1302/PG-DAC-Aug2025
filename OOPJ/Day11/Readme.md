@@ -9,9 +9,10 @@ Create an **abstract class `Shape`** that represents different geometric shapes.
 
 Next, create two concrete classes, **`Circle`** and **`Rectangle`**, that extend `Shape` and implement the `calculateArea()` method:  
 - The `Circle` class should have a **private attribute `radius`**, a constructor to initialize it, and implement `calculateArea()` using the formula:  
-  \[
-  \text{Area} = \pi \times \text{radius}^2
-  \]  
+$$
+A = \pi \times r^2
+$$
+ 
 - The `Rectangle` class should have **private attributes `length` and `width`**, a constructor to initialize them, and implement `calculateArea()` using the formula:  
   \[
   \text{Area} = \text{length} \times \text{width}
