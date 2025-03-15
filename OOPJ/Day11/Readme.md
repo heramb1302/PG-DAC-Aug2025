@@ -21,3 +21,14 @@ Finally, write a **test program** in the `main` method that:
 
 
 Note: Implement the concepts of **abstraction, method overriding, polymorphism, and encapsulation in Java OOP concepts**.
+
+---
+
+### Ques.2
+
+Create an **interface `Photosynthesis`**, which represents the ability of plants to absorb sunlight and perform photosynthesis. This interface should contain a method `void absorbSunlight();` that defines how plants absorb sunlight. Additionally, create another **interface `Respiration`**, which represents the respiration process in plants. This interface should include a method `void releaseOxygen();` that defines how plants release oxygen.  
+
+Next, implement a **concrete class `Plant`** that inherits from both interfaces, demonstrating multiple inheritance. The `Plant` class should have a **private attribute `plantName`** to store the name of the plant, which should be initialized using a constructor `Plant(String name)`. Additionally, it should have a method `getPlantName()` to return the name of the plant. The class should override the `absorbSunlight()` method to print the message **"Plant is absorbing sunlight for photosynthesis."** and override the `releaseOxygen()` method to print **"Plant is releasing oxygen through respiration."**.  
+
+In the main method, test the implementation by creating objects of the `Plant` class for two different plants: `"Mango Tree"` and `"Fern"`. For each object, display the plant's name, call the `absorbSunlight()` method, and call the `releaseOxygen()` method.  
+
