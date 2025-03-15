@@ -36,16 +36,10 @@ In the main method, test the implementation by creating objects of the `Plant` c
 
 ### Ques.3
 
-Begin by defining a **parent class `BMW`** that represents a generic BMW vehicle. This class should include:  
-1. A method **`showDetails()`** that prints `"This is a BMW vehicle."`  
-2. A method **`maxSpeed()`** that prints `"Speed varies by model."`  
+### **Java Coding Question (20 Marks)**  
 
-Next, create three subclasses—**`BMWSeries3`**, **`BMWSeries5`**, and **`BMWSeries7`**—that extend the `BMW` class and override its methods to provide specific details for each series.  
-- The `BMWSeries3` class should override `showDetails()` to print `"This is BMW Series 3."` and `maxSpeed()` to print `"Max speed: 240 km/h"`.  
-- The `BMWSeries5` class should override `showDetails()` to print `"This is BMW Series 5."` and `maxSpeed()` to print `"Max speed: 260 km/h"`.  
-- The `BMWSeries7` class should override `showDetails()` to print `"This is BMW Series 7."` and `maxSpeed()` to print `"Max speed: 300 km/h"`.  
+Implement **Runtime Polymorphism** in Java using a **BMW vehicle hierarchy**. Create a **parent class `BMW`** with two methods: `showDetails()`, which prints `"This is a BMW vehicle."`, and `maxSpeed()`, which prints `"Speed varies by model."`.  
 
-Finally, write a **test program** in the `main` method that:  
-1. Creates an **array of `BMW` references**, where each reference is assigned an object of `BMWSeries3`, `BMWSeries5`, or `BMWSeries7`.  
-2. Iterates through the array and calls `showDetails()` and `maxSpeed()` using **the BMW reference**, demonstrating **runtime polymorphism**.  
+Extend this class into **three subclasses**: `BMWSeries3`, `BMWSeries5`, and `BMWSeries7`, each overriding the methods to display their respective series names and max speeds (`240 km/h`, `260 km/h`, and `300 km/h`).  
 
+In the `main` method, create an **array of `BMW` references**, assign subclass objects, and use a loop to call `showDetails()` and `maxSpeed()`. The program should demonstrate **method overriding, runtime polymorphism, and dynamic method dispatch**.
