@@ -32,3 +32,20 @@ Next, implement a **concrete class `Plant`** that inherits from both interfaces,
 
 In the main method, test the implementation by creating objects of the `Plant` class for two different plants: `"Mango Tree"` and `"Fern"`. For each object, display the plant's name, call the `absorbSunlight()` method, and call the `releaseOxygen()` method.  
 
+===
+
+### Ques.3
+
+Begin by defining a **parent class `BMW`** that represents a generic BMW vehicle. This class should include:  
+1. A method **`showDetails()`** that prints `"This is a BMW vehicle."`  
+2. A method **`maxSpeed()`** that prints `"Speed varies by model."`  
+
+Next, create three subclasses—**`BMWSeries3`**, **`BMWSeries5`**, and **`BMWSeries7`**—that extend the `BMW` class and override its methods to provide specific details for each series.  
+- The `BMWSeries3` class should override `showDetails()` to print `"This is BMW Series 3."` and `maxSpeed()` to print `"Max speed: 240 km/h"`.  
+- The `BMWSeries5` class should override `showDetails()` to print `"This is BMW Series 5."` and `maxSpeed()` to print `"Max speed: 260 km/h"`.  
+- The `BMWSeries7` class should override `showDetails()` to print `"This is BMW Series 7."` and `maxSpeed()` to print `"Max speed: 300 km/h"`.  
+
+Finally, write a **test program** in the `main` method that:  
+1. Creates an **array of `BMW` references**, where each reference is assigned an object of `BMWSeries3`, `BMWSeries5`, or `BMWSeries7`.  
+2. Iterates through the array and calls `showDetails()` and `maxSpeed()` using **the BMW reference**, demonstrating **runtime polymorphism**.  
+
