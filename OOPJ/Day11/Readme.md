@@ -9,14 +9,10 @@ Create an **abstract class `Shape`** that represents different geometric shapes.
 
 Next, create two concrete classes, **`Circle`** and **`Rectangle`**, that extend `Shape` and implement the `calculateArea()` method:  
 - The `Circle` class should have a **private attribute `radius`**, a constructor to initialize it, and implement `calculateArea()` using the formula:  
-$$
-A = \pi \times r^2
-$$
+![image](https://github.com/user-attachments/assets/0a1b861d-a3eb-497f-85cd-56c08e6d9606)
  
 - The `Rectangle` class should have **private attributes `length` and `width`**, a constructor to initialize them, and implement `calculateArea()` using the formula:  
-  \[
-  \text{Area} = \text{length} \times \text{width}
-  \]  
+![image](https://github.com/user-attachments/assets/6bf43225-3c1e-4b19-889b-c81b5b87f74b)
 
 Finally, write a **test program** in the `main` method that:  
 1. Creates an object of `Circle` with a radius of `5.0` and displays the area.  
