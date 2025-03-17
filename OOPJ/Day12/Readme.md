@@ -30,6 +30,5 @@ Write a Java program that attempts to read from a file that does not exist and c
 #### **7. Implement `FileNotFoundException`**  
 Write a Java program that tries to open a file that does not exist using `FileReader`, and handle the `FileNotFoundException`.  
 
-#### **8. Implement `ClassNotFoundException`**  
-Write a Java program that tries to **load a class dynamically** using `Class.forName("SomeUnknownClass")` and handles the `ClassNotFoundException`.  
+
 
