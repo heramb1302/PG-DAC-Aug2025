@@ -15,3 +15,10 @@
 # Reading content
     1. Data Types : Primitive and Non primitive 
     2. Type casting
+
+### Prepare well:
+
+1. OOPS concepts : Abstraction, Encapsulation, Inheritance, Polymorphism
+2. Concstructor overloading, method Oveloading and method overriding
+3. Exception handling
+4. Collection
