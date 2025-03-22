@@ -21,4 +21,4 @@
 1. OOPS concepts : Abstraction, Encapsulation, Inheritance, Polymorphism
 2. Concstructor overloading, method Oveloading and method overriding
 3. Exception handling
-4. Collection
+4. Collection framework
