@@ -9,7 +9,8 @@
 ### **Key Properties of Backtracking:**
 - **Exploration of all possibilities:** It systematically searches through all possible solutions until a valid solution is found or all possibilities are exhausted.
 - **Decision-making process:** Each choice leads to a set of new choices, with some paths potentially leading to a solution.
-  
+![image](https://github.com/user-attachments/assets/b90531cf-fdde-4240-8ff2-6f6a24737fa5)
+
 ---
 
 ### **Applications of Backtracking:**
@@ -58,6 +59,8 @@ For a 4x4 chessboard, we need to place 4 queens such that no two queens can atta
    - Place in the second column, but queens on diagonals attack each other, so we place the second queen in the third column (x2 = 3).
 3. **Third Queen (Row 3):** Try placing in the third row, but no valid position exists, so backtrack to the second queen and move it to the next column.
 4. **Fourth Queen (Row 4):** Similar backtracking happens until all queens are placed.
+![image](https://github.com/user-attachments/assets/8688120e-2737-4acb-b801-49a1cb5c845f)
+![image](https://github.com/user-attachments/assets/892e01fd-4c22-4c2d-846c-33a92c5ae7f2)
 
 The final solution for the 4-Queens problem is:
 ```
@@ -68,6 +71,7 @@ This means:
 - The second queen is placed in the fourth column of the second row.
 - The third queen is placed in the first column of the third row.
 - The fourth queen is placed in the third column of the fourth row.
+![image](https://github.com/user-attachments/assets/38d083ec-b897-42fc-8956-c91742258fca)
 
 ---
 
@@ -98,6 +102,8 @@ The solution to the **8-Queens problem** follows the same backtracking approach 
 For the 8-Queens problem, one of the possible solutions is:
 ```
 1  2  3  5  4  6  7  8
+![image](https://github.com/user-attachments/assets/8a429c2b-4a54-4f15-9bb2-65ac0370618d)
+
 ```
 Where the queens are placed in positions as follows:
 - Queen 1 at column 1
