@@ -1,87 +1,65 @@
+class Node{
+	int data;
+	Node next;
+	Node(int d)
+	{
+		data = d;
+		next = null;
+	}
+}
 
-class Stack{
-	static final int MAX = 7;
-	int top;
-	int a[] = new int[MAX];
+class StackDemo3{
+	Node head;
 	
-	Stack(){
-		top = -1;
+	StackDemo3()
+	{
+		this.head = null;
 	}
 	
-	boolean isEmpty(){
-		return top < 0;
+	boolean IsEmpty(){
+		return head == null;
 	}
 	
-	boolean isFull(){
-		return top > MAX-1;
-	}
-	
-	boolean push(int x){
-		if(top >= (MAX-1)){
-			System.out.println("Stack Overflow!!!");
-			return false;
-			
-		}
-		else{
-			a[++top] = x;
-			System.out.println(x+"Element pushed!");
-			return true;
+	void push(int new_data){
+		Node new_node = new Node(new_data);
+		new_node.next = head;
+		head = new_node;
 		
-		}
-	
 	}
 	
-	int pop(){
-		if(top < 0){
-			System.out.println("Stack underflow");
-			return 0;
+	void pop(){
+		
+		if(IsEmpty()){
+			System.out.println("Stack Underflow!!!");
+			return;
 		}
-		else{
-			
-			int x = a[top--];
-			return x;
-			
-		}
+		Node temp = head;
+		head = head.next;
+		temp.next = null;
+		temp = null;
+		
 		
 	}
 	
 	int peek(){
-		if(top < 0){
-			System.out.println("Stack underflow");
-			return 0;
-		}
+		if(!IsEmpty())
+			return head.data;
 		else{
-			int x = a[top];
-			return x;
+			System.out.println("Stack Underflow!!!");
+			return -1;
 		}
 	}
 	
-	
-}
-
-class StackDemo11{
-	public static void reverse(StringBuffer str)
-	{
-		int n=str.length();
-		Stack s1 = new Stack(n);
-		
-		int i;
-		for(i=0;i<n;i++)
-			s1.push(str.charAt(i));
-		
-		for(i=0;i<n;i++)
-		{
-			char ch =(char)s1.pop();
-			str.setCharAt(i,ch);
-		}
-	}
-
 	public static void main(String[] args) {
-	StringBuffer s = new StringBuffer("CDAC MUMBAI");
-	reverse(s);
-	System.out.println("Reverse string is "+s);
-
-	}
 		
+	StackDemo3 s1 = new StackDemo3();
 	
+	s1.push(80);
+	s1.push(20);
+	s1.push(40);
+	System.out.println(s1.peek());
+	s1.pop();
+	System.out.println(s1.peek());
+		
+	}		
 }
