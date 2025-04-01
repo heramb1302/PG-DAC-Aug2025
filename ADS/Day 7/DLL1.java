@@ -83,34 +83,7 @@ class DLL{
 		
 		
 	}
-	void deleteNode(Node del)
-	{
-		//case 1 :Empty DLL & del node empty
-		if(head == null || del == null)
-			return;
-		
-		//case 2 : First node/Head to be deleted
-		if(head == del){
-			head = del.next;
-			head.prev = null;
-		}
-		
-		//Case3: In between node del
-		if(del.next != null)
-			del.next.prev = del.prev;
-		
-		//Case3: In between node del
-		//Case 4: Last node delete
-		if(del.prev != null)
-			del.prev.next = del.next;
-		
-		return;
-			
-		
-		
-		
-		
-	}
+	
 	public static void main(String[] args) {
 		
 		DLL d1  = new DLL();
@@ -129,9 +102,6 @@ class DLL{
 		//d1.display(d1.head);
 		
 		d1.append(50);
-		d1.display(d1.head);
-		System.out.println();
-		d1.deleteNode(d1.head);
 		d1.display(d1.head);
 		
 		
