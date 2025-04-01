@@ -116,7 +116,7 @@ class DLL{
 		DLL d1  = new DLL();
 		d1.head=null;
 		//d1.display(d1.head.next);
-		/*System.out.println();
+		System.out.println();
 		d1.insert(30);
 		d1.insert(20);
 		d1.insert(10);
@@ -126,13 +126,13 @@ class DLL{
 		//d1.display(d1.head);
 		System.out.println();
 		d1.insertAfter(d1.head.next, 17);
-		//d1.display(d1.head);*/
+		//d1.display(d1.head);
 		
 		d1.append(50);
 		d1.display(d1.head);
 		System.out.println();
 		d1.deleteNode(d1.head);
-		//d1.display(d1.head);
+		d1.display(d1.head);
 		
 		
 		
