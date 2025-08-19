@@ -1,0 +1,173 @@
+Date: 18/08/2025
+Day 1 : Introduction to OS
+COS Session Zoom
+------------------------------
+Topics: 
+	-Introduction to OS
+	-Concept of OS
+	-Application Software
+	-Hardware dependent
+	-Components of OS
+	-Types of OS		
+	-Functions of OS 
+	-User and Kernel space & model
+	-Interrupts & system calls
+	-Introduction to Linux
+
+
+Operation System:
+--------------------
+-Os is a program that manges the computer hardware
+-It also provide a basis for Application programs and acts as a intermediary between user and computer hardware.
+
+Multiprocessor System:
+---------------------
+
+1. Client-server architecute
+
+2. Peer to Peer architecture
+
+3. Symmetric Multiprogramming
+
+4. Asymmeteric Multiprogramming
+
+Interrupt:
+---------
+-It is an event usually defines as  it alters the sequence of instructions executed by a processor.
+
+Without Interrupt:
+1. Instruction Fetch
+2. Intruction Execution
+
+With Interrupt:
+1. Instruction Fetch
+2. Intruction Execution
+3. Check Interrupt
+
+Intrrupt Handling Technique:
+
+1. Polling
+2. Vectored interrupted system
+
+
+Introduction to Linux:
+------------------------
+Linux:
+	-Open source
+	-Free
+	-Free software
+	-Live CD Distribution
+	-Secure
+	-No
+	-Low hardware cost
+	-Customizable add features
+
+
+Windows:
+	-Closed source
+	-Cost
+	-Cost software
+	-No
+	-Insecure
+	-Virus, Malware : Antivirus
+	-High Hardware cost
+	-Not customizable
+
+
+UNIX:
+------
+ -Operating System
+ -1969, AT&T Bell Lab by Ken Thompson and Dennis Ritche
+ -Command Line Interpreter
+ -In was developed for the mini-computers and time sharing systems.
+ -UNIX was the predecessor of LINUX
+ 
+Features:
+	-Security
+	-Multi-user
+	-Inter process comunication
+	-Extensive network support
+	-Data sent to display , files, or printer...
+
+
+LINUX:
+-Invented by Linus Torvalds in 1991.
+-Open source
+-LINUX ia a variant of UNIX
+-Multi-user, Multitasking and multiprocessor programming
+
+
+Distributions :
+
+UBuntu
+Linux mint
+Debian
+Fedora
+CentOS
+
+Layers of Linux/Unix:
+----------------------
+
+Kernel:
+-It is the core component of UNIX OS
+-It is responsible to execute commands
+-It is responsible to interact with hardware components
+-It is also responsible for memory loocation and process allocation 
+
+Shell:
+------
+-It is athe outer layer of UNIX operating system
+- The shell is a program that sits on the interface between user and kernel
+-It is a command interpreter and also has programming capability of it's own.
+-Shell types:
+	-Bourne shell(sh) :First shell by Stephen Bourne
+	-C shell(sh)
+	-Korn shell(ksh)
+	-Bourne Again Shell(bash)
+
+Bourne Again Shell(bash):
+--------------------------
+-command language interpreter
+-It is a replacement of Bourne shell(sh)
+
+File system:
+------------
+-Linux treats everything as a file including hardware devices.
+-Arranged as a directory in hierchical order
+-Top level directory : Root directory (/)
+
+-Types of files:
+-----------------
+	1. Normal file: These files contain data.
+	-It can be either text file (abc.txt) or binary file(img, video)
+	
+	2.Directory files:These files represents directory
+	-Directory can contain files and subdirectories
+	
+	3.Device files:In Linux, every device is represented as a file.
+	By using these files we can communicate with that device.
+	
+	
+	The first character represents the type of file:
+	d : Directory file
+	- : Normal file
+	| : Link file
+	c : Character Special file
+	b : Block special file
+	s : Socket file
+	
+	Common Commands:
+	----------------
+	pwd: print working directory
+	ls:  List our all files and directories
+	mkdir: Create directory
+	cd : Change directory
+	touch : To create a file
+	rmdir : Remove directory
+	rm : To remove file
+	cal : Display Monthly calander
+	date: Display the current date and time
+	help: To display list of commands
+	hello : To display brief system information
+	clear: To clear terminal
+	exit : To logout
