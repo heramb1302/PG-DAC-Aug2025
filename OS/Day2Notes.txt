@@ -1,0 +1,102 @@
+Module: Operating system
+------------------------------
+Date: 19/08/2025
+Day 2 : Introduction to OS
+COS Session Zoom
+------------------------------
+Topics: Process Management
+	-Process ID
+	-Process Life cycle
+	-Schedulers
+	-Types of Schedulers
+	-Process creation
+	
+Process:
+-The process is basically an instance of the computer proram that is being executes.
+-short lifespan
+-H/w : CPU, i/o devices, memory
+-runtime instance
+-dynamic instance
+
+Program:
+-A program is vbasically a collection of instructions that mainly performs a specific task when execution starts.
+-long lifespan
+-memory: hardisk
+-executable code
+-static code
+
+Process control Block:
+------------------------
+-Process state
+-Program counter
+-CPu registers
+-CPu algorithms
+-CPU scheduleing information
+-Memory management information
+-Accounting information
+-I/O status information
+
+
+Process life cycle: States
+--------------------
+1. New
+2. Running
+3. Waiting
+4. Ready
+5. Terminated
+
+Process scheduling:
+-------------------
+-It is the act of determining which process is in the ready state, and should be moved to the running state is known as Process scheduling.
+
+
+Types of process:
+-------------------
+1. Non-preemptive
+2. Preemptive
+
+
+
+
+
+Scheduling algorithms:
+----------------------
+1. Non-preemptive scheduling
+2. Preemptive scheding
+
+
+Job Queue: Process to be in execution
+Ready queue: Process waiting for execution
+I/O Queue:
+
+Operations on Process:
+----------------------
+1. Process creation
+-fork or spawn
+2. Process Termination
+
+
+Redirection operators:
+-----------------------
+
+> : Redirect output to a file
+Ex: ls > abc.txt
+
+>> :Append output of a file.
+EX: 
+
+< : REdirect input from a file
+
+
+|: Pipe
+
+Meta characters:
+ ? * [] -(Range)
+ Ex: [abcd]*
+ Ex: [a-d]*
+ 
+ 
+ Vi Editor:
+ ---------
+ i : insert model
+ Esc + :wq => save +quit
