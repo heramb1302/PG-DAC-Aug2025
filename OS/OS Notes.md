@@ -578,3 +578,470 @@
 
 
 <img width="1147" height="526" alt="image" src="https://github.com/user-attachments/assets/c70dba0c-96b9-4274-a8e0-7f600ba520b9" />
+---
+# Deadlock
+
+Sure! Here’s a **concise, bulleted explanation of Deadlocks in Operating Systems**:
+
+---
+
+### **Deadlocks in Operating System**
+
+* **Definition:**
+
+  * A **deadlock** is a situation in which **two or more processes are unable to proceed because each is waiting for resources held by the other**.
+  * Essentially, **processes are stuck forever**, unable to continue execution.
+
+* **Necessary Conditions for Deadlock (Coffman Conditions):**
+  Deadlock occurs only if **all four conditions** hold simultaneously:
+
+  1. **Mutual Exclusion:**
+<img width="776" height="237" alt="image" src="https://github.com/user-attachments/assets/36fb8c93-0725-42a8-9e28-f7f0d4312f55" />
+
+     * At least one resource must be **non-sharable** (only one process can use it at a time).
+  2. **Hold and Wait:**
+
+     * A process **holds at least one resource** and **waits for other resources** currently held by other processes.
+  3. **No Preemption:**
+<img width="587" height="418" alt="image" src="https://github.com/user-attachments/assets/95de245a-7a30-4568-a2e4-6f69c41149e7" />
+
+     * Resources **cannot be forcibly taken** from a process; the process must release them voluntarily.
+  4. **Circular Wait:**
+
+     * A **closed chain** of processes exists where each process **waits for a resource held by the next process** in the chain.
+<img width="1116" height="470" alt="image" src="https://github.com/user-attachments/assets/eb932bdb-9847-4278-a152-8894ab4afb45" />
+
+* **Example:**
+
+  * Process P1 holds Resource R1 and waits for Resource R2.
+  * Process P2 holds Resource R2 and waits for Resource R1.
+  * Both processes are stuck → **deadlock**.
+
+* **Deadlock Handling Strategies:**
+
+  1. **Deadlock Prevention:**
+
+     * Ensure at least one of the Coffman conditions cannot hold.
+     * Example: **Disallow circular wait** by imposing resource hierarchy.
+  2. **Deadlock Avoidance:**
+
+     * Require processes to **declare maximum resources** in advance.
+     * Use algorithms like **Banker’s Algorithm** to ensure safe resource allocation.
+  3. **Deadlock Detection and Recovery:**
+
+     * Allow deadlock to occur, **detect it**, and recover:
+
+       * Terminate one or more processes.
+       * Preempt resources from some processes.
+  4. **Ignoring Deadlocks:**
+
+     * Also called the **ostrich approach**; suitable when deadlocks are rare.
+
+* **Methods of Deadlock Detection:**
+
+  * **Resource Allocation Graph (RAG):** Detect cycles in the graph.
+  * **Detection Algorithm:** Keep track of resources and processes; check if any process is indefinitely waiting.
+
+### **Banker’s Algorithm**
+
+* **Definition:**
+
+  * The **Banker’s Algorithm** is a **deadlock avoidance algorithm**.
+  * Named after the banking system analogy: a banker **only grants resources if it is safe** to do so, ensuring that all processes can complete eventually.
+  * Works by **checking system safety** before allocating resources.
+
+* **Purpose:**
+
+  * To **avoid deadlocks** by ensuring that the system **never enters an unsafe state**.
+  * Guarantees that **resources are allocated only if the system remains in a safe state**.
+
+* **Key Concepts:**
+
+  1. **Safe State:**
+
+     * A state is **safe** if there exists a sequence of processes such that **all can complete without causing deadlock**.
+  2. **Unsafe State:**
+
+     * A state is **unsafe** if there is **no guarantee that all processes can complete**, even if resources are currently available.
+
+* **Data Structures Used:**
+
+  * **Available:** Vector showing the number of **available instances of each resource type**.
+  * **Max:** Matrix showing the **maximum demand of each process** for each resource type.
+  * **Allocation:** Matrix showing **current resources allocated** to each process.
+  * **Need:** Matrix showing **remaining resources needed** by each process to complete:
+
+    $$
+    \text{Need[i][j]} = \text{Max[i][j]} - \text{Allocation[i][j]}
+    $$
+
+* **Algorithm Steps (Safety Check):**
+
+  1. Let **Work = Available**, **Finish\[i] = false** for all processes.
+  2. Find a process `P[i]` such that:
+
+     $$
+     \text{Need[i]} \leq \text{Work} \quad \text{and} \quad \text{Finish[i]} = false
+     $$
+  3. If such a process is found:
+
+     * Pretend to allocate resources to `P[i]` and let it finish.
+     * Update:
+
+       $$
+       Work = Work + Allocation[i]
+       $$
+
+       $$
+       Finish[i] = true
+       $$
+     * Repeat step 2.
+  4. If no such process exists and all Finish\[i] = true → **Safe state**.
+  5. Otherwise → **Unsafe state**, do **not allocate resources**.
+
+* **Example:**
+
+  | Process | Max | Allocation | Need |
+  | ------- | --- | ---------- | ---- |
+  | P0      | 7   | 0          | 7    |
+  | P1      | 5   | 1          | 4    |
+  | P2      | 3   | 1          | 2    |
+
+  * If Available = 3, check if resources can be safely allocated.
+  * Use **Need ≤ Available** to find safe sequence.
+  * Only allocate if the system stays in **safe state**.
+
+* **Advantages:**
+
+  * **Avoids deadlocks proactively**.
+  * Allows **concurrent execution** of processes safely.
+
+* **Disadvantages:**
+
+  * Requires **processes to declare maximum resource need in advance**.
+  * **Overhead** of checking system safety for every request.
+  * Not practical for all systems, especially **dynamic processes** with unknown maximum needs.
+
+
+---
+
+
+
+### **Dining Philosophers Problem**
+
+* **Definition:**
+
+  * The **Dining Philosophers Problem** is a **classic synchronization problem** in operating systems.
+  * It illustrates problems like **deadlock, starvation, and resource sharing** among concurrent processes.
+
+* **Problem Statement:**
+
+  * Imagine **five philosophers** sitting around a circular table.
+  * **Each philosopher alternates** between **thinking** and **eating**.
+  * There is **one fork between each pair of philosophers** (so 5 forks in total).
+  * To **eat**, a philosopher needs **both the left and right forks**.
+  * Only **one philosopher can pick up a fork at a time** (mutual exclusion).
+
+* **Key Constraints / Issues:**
+
+  1. **Mutual Exclusion:** Only one philosopher can use a fork at a time.
+  2. **Deadlock:** If every philosopher picks up their **left fork simultaneously**, all will wait for the **right fork** → no one eats.
+  3. **Starvation:** Some philosophers may **wait indefinitely** if others keep eating.
+  4. **Concurrency Problem:** Requires proper **synchronization** to avoid conflicts.
+
+* **Goals / Requirements:**
+
+  * **Prevent deadlock.**
+  * **Prevent starvation.**
+  * Ensure **all philosophers get a chance to eat** eventually.
+
+* **Solutions / Approaches:**
+
+  1. **Resource Hierarchy (Numbering Forks):**
+
+     * Number the forks 1 to 5.
+     * Always pick up the **lower-numbered fork first**, then the higher-numbered fork.
+     * Prevents **circular wait** → **avoids deadlock**.
+
+  2. **Arbitrator (Waiter) Solution:**
+
+     * Introduce a **waiter** (semaphore) who **grants permission to pick up forks**.
+     * Philosophers can **eat only if both forks are available**.
+
+  3. **Semaphore Solution (Chandy/Misra Algorithm):**
+
+     * Use **binary semaphores** for each fork.
+     * Implement **P (wait) and V (signal) operations** to ensure **mutual exclusion**.
+
+  4. **Limit Philosophers:**
+
+     * Allow **only 4 out of 5 philosophers to pick up forks** at a time.
+     * Ensures at least **one philosopher can always eat**, preventing deadlock.
+
+* **Real-world Analogy:**
+
+  * Multiple processes sharing **limited resources** (printers, CPU cores, memory).
+  * Helps in understanding **deadlocks and synchronization in operating systems**.
+
+---
+Sure! Here’s a clear and concise explanation of **threads in Operating Systems** in **bulleted form** for easy understanding:
+
+---
+<img width="1500" height="1125" alt="image" src="https://github.com/user-attachments/assets/fc446d5f-8ca4-4681-ba69-7b75d1a21ecb" />
+
+### **Thread in Operating System**
+
+* **Definition:**
+
+  * A **thread** is the **smallest unit of execution** within a process.
+  * Sometimes called a **lightweight process (LWP)** because it shares resources of its parent process.
+
+* **Key Concept:**
+
+  * A process can have **multiple threads** executing concurrently.
+  * Threads within the same process **share code, data, and resources**, but have their **own program counter, stack, and registers**.
+<img width="1461" height="1085" alt="image" src="https://github.com/user-attachments/assets/fddba2a5-fb5a-493e-b1ba-c34020b2839d" />
+
+* **Components of a Thread:**
+
+  * **Thread ID:** Unique identifier for the thread.
+  * **Program Counter (PC):** Indicates the current execution point.
+  * **Registers:** Store the current working variables.
+  * **Stack:** Each thread has its own stack for function calls, local variables, etc.
+
+* **Types of Threads:**
+
+  * **User-level threads (ULT):** Managed by user-level libraries; OS unaware.
+  * **Kernel-level threads (KLT):** Managed by the OS; can be scheduled independently.
+  * **Hybrid Threads:** Combination of ULT and KLT (e.g., many-to-many model).
+    
+<img width="1488" height="1077" alt="image" src="https://github.com/user-attachments/assets/a9f81b07-15ad-44c1-9061-4b9883e8bc57" />
+<img width="1463" height="1079" alt="image" src="https://github.com/user-attachments/assets/839bd3d2-701b-4161-bd05-5c354c6e53cd" />
+<img width="1459" height="1087" alt="image" src="https://github.com/user-attachments/assets/7d61dcce-e164-4480-81b3-72d238e27129" />
+
+* **Advantages of Threads:**
+
+  * **Faster context switching** than processes.
+  * **Efficient CPU utilization** (concurrent execution).
+  * **Shared memory** simplifies communication between threads.
+  * **Better resource management** because threads of the same process share resources.
+
+* **Disadvantages / Challenges:**
+
+  * **Synchronization issues** (race conditions, deadlocks).
+  * **Complex debugging** due to concurrent execution.
+  * If one thread fails, it may **affect other threads** in the same process.
+
+* **Thread Operations:**
+
+  * **Creation:** Start a new thread.
+  * **Termination:** End a thread’s execution.
+  * **Synchronization:** Use mutex, semaphores, or monitors.
+  * **Scheduling:** Threads are scheduled by the OS or thread library.
+
+* **Examples of Thread Usage:**
+
+  * Web server handling multiple requests simultaneously.
+  * GUI applications: one thread for UI, another for background tasks.
+  * Parallel computation in scientific applications.
+
+* **Difference between Process and Thread:**
+
+| Feature           | Process              | Thread                           |
+| ----------------- | -------------------- | -------------------------------- |
+| Resource Sharing  | Has own memory space | Shares memory with other threads |
+| Context Switch    | Slower               | Faster                           |
+| Creation Overhead | Higher               | Lower                            |
+| Execution         | Independent          | Part of process execution        |
+
+---
+
+# Memory Management
+### **Memory Management**
+
+- **Memory Types**:
+  - **Primary Memory** (RAM):
+    - Fast, volatile memory used by the CPU to store data and instructions currently in use.
+    - **Example**: Programs running on your computer are stored in RAM.
+  - **Secondary Memory** (HDD/SSD):
+    - Non-volatile memory used for long-term storage of data and programs.
+    - **Example**: Files saved on your hard drive or solid-state drive.
+  - **Cache Memory**:
+    - Small, high-speed memory located close to the CPU, used to temporarily hold frequently accessed data.
+    - **Example**: CPU cache that stores recently used instructions.
+  - **Virtual Memory**:
+    - A technique that extends the available memory by using disk space to simulate additional RAM.
+    - **Example**: When running out of physical RAM, the system uses a swap file on the disk.
+<img width="1187" height="517" alt="image" src="https://github.com/user-attachments/assets/7b6a406a-45ea-446c-8989-ce8f9c99cec6" />
+
+- **Need for Memory Management**:
+  - Efficiently manages the limited memory resources, ensuring that multiple processes can run simultaneously without interference.
+  - Allocates memory to processes, keeps track of memory usage, and frees memory when it is no longer needed.
+  - Prevents issues like fragmentation, ensures security by isolating process memory, and optimizes system performance.
+
+### **Continuous and Dynamic Allocation**
+<img width="962" height="467" alt="image" src="https://github.com/user-attachments/assets/f04c8c5e-d38c-4859-a259-ab6c3cf311c6" />
+
+- **Continuous Allocation**:
+  - Memory is allocated in contiguous blocks.
+  - **Example**: A program requiring 100 KB of memory might be allocated a single, continuous block of 100 KB.
+  - **Limitation**: Can lead to fragmentation and inefficient use of memory.
+
+- **Dynamic Allocation**:
+  - Memory is allocated dynamically as needed, possibly in non-contiguous blocks.
+  - **Example**: A program might allocate memory in chunks at runtime, such as dynamic arrays in C (`malloc()`).
+
+### **Memory Allocation Strategies**
+
+- **First Fit**:
+  - Allocates the first block of memory that is large enough for the process.
+  - **Example**: If blocks of 10 KB, 20 KB, and 30 KB are available, and a process needs 15 KB, the 20 KB block is chosen.
+
+- **Best Fit**:
+  - Allocates the smallest block of memory that is large enough to satisfy the process's requirements.
+  - **Example**: If blocks of 10 KB, 20 KB, and 30 KB are available, and a process needs 15 KB, no fit is found unless there's a 15 KB block exactly.
+
+- **Worst Fit**:
+  - Allocates the largest available block of memory, leaving the largest leftover portion.
+  - **Example**: If blocks of 10 KB, 20 KB, and 30 KB are available, and a process needs 15 KB, the 30 KB block is chosen, leaving 15 KB.
+
+### **Compaction**
+
+- **Definition**:
+  - A technique used to reduce fragmentation by shifting processes in memory to create a large contiguous block of free space.
+  - **Example**: After several allocations and deallocations, memory might be scattered with free and used blocks; compaction rearranges memory to consolidate free space.
+
+### **Fragmentation**
+<img width="1175" height="486" alt="image" src="https://github.com/user-attachments/assets/b28d20fa-81e6-415d-9e62-c0314516f698" />
+
+- **Internal Fragmentation**:
+  - Occurs when allocated memory is slightly larger than the requested memory, leaving small, unusable gaps.
+  - **Example**: Allocating 20 KB to a process that only needs 18 KB leaves 2 KB of internal fragmentation.
+
+- **External Fragmentation**:
+  - Occurs when there is enough total free memory, but it is not contiguous, preventing allocation to processes that require a large contiguous block.
+  - **Example**: Free memory scattered in small blocks across the system, preventing the allocation of a large block to a new process.
+
+### **Segmentation**
+
+- **What is Segmentation**:
+  - A memory management technique that divides the process memory into segments based on logical divisions such as functions, data, or stack.
+  - **Example**: A program might have a code segment, data segment, and stack segment.
+
+- **Hardware Requirement for Segmentation**:
+  - **Segment Table**:
+    - Stores the base address and limit (length) of each segment.
+  - **Segment Table Interpretation**:
+    - Base Address: Starting address of the segment in physical memory.
+    - Limit: Size of the segment.
+  - **Diagram**:
+    - Segment table entry:
+      ```
+      Segment   Base Address   Limit
+        0       1000           400
+        1       1400           300
+        2       1700           500
+      ```
+
+### **Paging**
+<img width="926" height="467" alt="image" src="https://github.com/user-attachments/assets/3312f89b-4fb0-422d-8d64-c46e63cd2a24" />
+
+- **What is Paging**:
+  - A memory management scheme that eliminates the need for contiguous allocation by dividing memory into fixed-sized pages.
+  - **Example**: A process of 10 KB might be divided into 2 pages of 4 KB each, with the remaining 2 KB in a third page.
+
+- **Hardware Required for Paging**:
+  - **Page Table**:
+    - Maps virtual page numbers to physical frame numbers.
+  - **Translation Lookaside Buffer (TLB)**:
+    - A cache used to store recent page table entries to speed up address translation.
+
+- **Paging Table**:
+  - Contains entries mapping virtual page numbers to physical frames.
+  - **Diagram**:
+    ```
+    Virtual Page Number   Frame Number
+    0                     5
+    1                     9
+    2                     12
+    ```
+
+### **Concept of Dirty Bit**
+
+- **Dirty Bit**:
+  - A flag used in memory management to indicate whether a page has been modified while in memory. If set, the page must be written back to disk before being replaced.
+  - **Example**: If a word processor modifies a document in memory, the dirty bit for that page is set, indicating it must be saved before being removed from memory.
+
+### **Shared Pages and Reentrant Code**
+
+- **Shared Pages**:
+  - Pages that are shared between multiple processes, often containing reentrant code.
+  - **Example**: Multiple instances of a text editor sharing the same read-only code segment.
+
+- **Reentrant Code**:
+  - Code that can be safely executed by multiple processes simultaneously without interference.
+  - **Example**: The text editor’s code segment can be shared because it does not modify itself.
+
+### **Throttling**
+
+- **Definition**:
+  - Controlling the rate at which processes can access memory or other system resources to ensure system stability.
+  - **Example**: Limiting the number of processes accessing the disk simultaneously to prevent I/O bottlenecks.
+
+### **I/O Management**
+
+- **Overview**:
+  - Manages input/output operations, coordinating between the CPU, memory, and I/O devices.
+  - **Components**:
+    - **Device Drivers**: Software that controls specific hardware devices.
+    - **I/O Scheduler**: Manages the order in which I/O operations are processed.
+  - **Example**: The OS decides the order in which print jobs are sent to the printer, ensuring efficient and fair access. 
+
+### **Diagrams**
+
+- **Paging**:
+  - Example diagram showing logical pages mapped to physical frames:
+    ```
+    Virtual Address       Physical Address
+    +------------+       +------------+
+    |  Page 0    | ----> | Frame 5     |
+    +------------+       +------------+
+    |  Page 1    | ----> | Frame 9     |
+    +------------+       +------------+
+    |  Page 2    | ----> | Frame 12    |
+    +------------+       +------------+
+    ```
+
+- **Segmentation**:
+  - Example diagram showing segment table mapping logical segments to physical memory:
+    ```
+    Segment Table
+    +------------+---------------+--------+
+    | Segment ID | Base Address  |  Limit |
+    +------------+---------------+--------+
+    |     0      |    1000       |   400  |
+    |     1      |    1400       |   300  |
+    |     2      |    1700       |   500  |
+    +------------+---------------+--------+
+
+    Physical Memory
+    +-------------------------+
+    |   Segment 0             |   Base Address: 1000
+    |   (Code)                |
+    +-------------------------+
+    |   Segment 1             |   Base Address: 1400
+    |   (Data)                |
+    +-------------------------+
+    |   Segment 2             |   Base Address: 1700
+    |   (Stack)               |
+    +-------------------------+
+    ```
+
+- **TLB in Paging**:
+  - Example showing the TLB and its role in fast address translation:
+    ```
+    Virtual Address        TLB Lookup        Physical Address
+    +-------------+       +-------------+   +-------------+
+    | Page Number | ----> | Frame Number | > | Frame Number |
+    +-------------+       +-------------+   +-------------+
+    ```
