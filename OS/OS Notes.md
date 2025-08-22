@@ -581,10 +581,6 @@
 ---
 # Deadlock
 
-Sure! Here’s a **concise, bulleted explanation of Deadlocks in Operating Systems**:
-
----
-
 ### **Deadlocks in Operating System**
 
 * **Definition:**
@@ -784,10 +780,8 @@ Sure! Here’s a **concise, bulleted explanation of Deadlocks in Operating Syste
   * Helps in understanding **deadlocks and synchronization in operating systems**.
 
 ---
-Sure! Here’s a clear and concise explanation of **threads in Operating Systems** in **bulleted form** for easy understanding:
 
----
-<img width="1500" height="1125" alt="image" src="https://github.com/user-attachments/assets/fc446d5f-8ca4-4681-ba69-7b75d1a21ecb" />
+
 
 ### **Thread in Operating System**
 
