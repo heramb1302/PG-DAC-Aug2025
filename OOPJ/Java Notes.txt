@@ -318,3 +318,373 @@ Separator:
 [] : Array
 () : Methods
 { }: Scope
+
+String Literals: 
+-Sequence of characters enclosed within double quotes ("")
+-In Java String : class
+Ex: String s1 = "kiran"; // String literal
+
+Separator: 
+[] : Array
+() : Methods
+{ }: Scope
+
+Wrapper class: Autoboxing and Unboxing
+
+byte -> Byte
+short -> ShortModule: OOPJ
+------------------------------
+Date: 25/08/2025
+Day 1 : Introduction to Java
+------------------------------
+Topics: 
+	-Foundation of Java
+	-Basic concepts
+	-Flow of Execution
+	-JVM, JDK and JRE
+	-Programs : Java
+
+Java:
+------
+-high level language, Object oriented, platform independent programming language.
+-James Gosling ,Sun Microsystem,1995
+
+Programming language:
+	-OOP : support  classes, objects, inheritance, encapsulation, abstraction, polymorphism
+	-Platform independent: WORA=> Write once and run anywhere
+	-Strongly type
+	-Rich standard library
+	-Robust and secure
+	-Multithreaded programming
+
+Technology
+	-A broader concept involving tools and platforms and methodologies
+Framework
+	-A structured collection of code that simplifies development
+	
+	-Java EE / Jakarta EE
+	-Spring framework
+	-Hibernate ORM
+	
+Platform:
+	-JVM:Executes java programs
+	-JDK:Tools  for development of program
+	-JRE:Runtime environment
+	
+Editions:
+	-Java SE:Standard Edition 
+	-core programming and libraries
+	-DEsktop applicatios
+	
+	-Java EE:Enterprise Edition
+	-Enterprise & Server side programming
+	-WEb applications, APIs(Application Programming Interface), Microservice
+	
+	-Java ME:Micro Edition
+	-Embedded and Mobile applications
+	-IOT, Sensor, gamming applications
+	
+	JavaFX
+	-GUI and rich client applications
+	-Visual desktop applications, Dashboards
+	
+	JDK : Java DEvelopemnt Kit
+	-It is a software development environment used for developing Java applications.
+	-JDK is a superset of JRE (Java Runtime Environment), which includes tools for development and debugging.
+	
+	JRE: Java Runtime Environment
+	- JRE is a subset of JDK
+	-It provides the environment to run java program, but it doesnot contain any development tool.
+	-Componenets :
+		-JVM : Java virtual maachine: Execute the compiled bytecode
+		-core libaries: java.lang, java.net, java.sql, etc
+		-Other runtime files: Needed for Java programs to execute
+	
+	JIT Compiler:
+	-Convert bytecode into machine code at runtime to improve performance
+	-It is part of JVM
+	-Purpose is tp speed up execution of frequently used code
+	
+	Adv:
+	-Faster excution
+	-Adaptive performance optimization
+	-Code caching
+	-Balance interpretation and compilation
+	
+Java Token:
+	-Reserved words
+	-Identifiers
+		aa_member
+		aa1
+		aa$
+	
+	-Constants (Literals)
+	-Operators
+	-Separators
+ 
+Comments:
+	-Single line comment (//)
+	-Multi line comments (/*-----*/)
+
+White space:
+
+Data types:
+---------------
+1. byte: 1 byte = 8 bits
+Range : -128 to 127
+
+byte b =127;
+
+------------------------------
+2.short: 2 bytes = 16 bits
+Range : -32768 to 32767
+
+short s = 32767;
+------------------------------
+3.int: 4bytes = 32 bits
+Range: -2^31 to (2^31)-1
+
+16 bit processor :2 bytes
+32 bit processor :4 bytes
+------------------------------
+4.long =8bytes =64 bits
+Range: -2^63 tp (2^63)-1
+
+long l = 1230000*60*60*24*1000;
+
+----------------------------------
+1. float : 4bytes
+Range : +/-3.4E38
+PRecision: 5/6 decimals places
+0.0F
+
+------------------------------
+2. double : 8 bytes
+Range: +/- 1.7E308
+Precision: 14 /15 decimal places (Double precision)
+0.0D
+
+-------------------------------
+Boolean: Size: NA
+Range: NA (true or false)
+Case sensitive: true/false
+
+boolean b = 0;//Err: Incompatible
+
+C/C++ = false=0, true=1
+Java = true / false
+
+
+boolean b = "false";
+
+Ex:
+int x=0;
+//boolean x=true;
+if(x)//Error
+{
+
+}
+Ex:
+while(1){ //Error
+
+
+}
+------------------------------
+char data type:
+C/C++ = char = 1bytes (support ASCII characters)
+Java:
+Size: 2 bytes (supports unicode character)unicode = global characters.
+
+'\u0000' : Representation of unicode characters
+
+------------------------------
+Java command:
+set JAVA_HOME=C:\Program Files\Java\jdk-21
+set PATH=%JAVA_HOME%\bin;%PATH%
+------------------------------
+OOPJ Module
+-----------------
+Meeting Id: 81940226085
+Key: 12345
+------------------------------
+Date: 26/08/2025
+Day 2 : OOPJ
+------------------------------
+Topics: 
+	-Java Tokens: keywords, identifiers, literals, operators
+	-Declaring variables and methods
+	-Data type compatibility
+	-Programs
+
+
+JVM : Java Virtual Machine:
+
+1. Class Loader System:
+-Responsible for loading classes into memory
+	-Bootstrap class loader
+	-Extension Class loader
+	-System (Application) class loader
+	-Custom class Loader
+
+2. Runtime Data Access (Memory)
+-These memory regions are managed by JVM at runtime.
+	-Method Area:
+		-Stores the class level data
+		-Share among all threads
+		
+	-Heap:
+		-Stores all objects and their instance variables
+		-Share among all threads
+		
+	-Java Stack:
+		-Stores frames for each method call(local variables, intermediate values)
+		-Each thread has its own stack
+		
+	-PC Register:Program Counter Register
+		-Stores the current instructions address being executed for each thread.
+		
+	-Native Methods Stack:
+		-Support native (non-java) method execution written C/C++
+		
+3. Execution Engine:
+	-Just-In-Time (JIT) Compiler
+		-Converts bytecode into native machine code at runtime
+		-Improves performance by caching compiled code
+		
+	-Interpreter
+		-Read and excute bytecode line by line
+		-Slower compared to compiled code
+		
+	-Garbage Collector (GC)
+		-Automatically reclaims memory used by unreachable objects
+		-Runs in the background to free Heap memory space.
+		
+	
+JVM Workflow:
+-------------
+1. Source code (.java) -> compiled by javac -> bytecode(.class)
+2. Class loader loads the .class file into JVM
+3. Bytecode verifies for security
+4. Loaded clases stored in Method area; objects store in Heap.
+5. Execution Engine excutes instructions using Interpreter or JIT
+6. Garbage Collector manages unsused objects.
+
+
+JVM Thread:
+-Main Thread: Execute the main() method
+	-User defined threads (Thread (class) or Runnable (interface))
+
+	public static void main(String args[]){}
+
+-Reference Habdler Thread
+-Finalizer Thread
+-Signal Dispachter Thread
+-Compiler Thread
+-Garbage Collector Thread
+-etc...
+
+Literals: Java Constants
+-A constant value assigned to a variable, is called as literal.
+Ex:
+
+	int x = 10;//10 is a literal
+
+Integral Literals:bye, short, int, long
+Ex:
+	1. Decimal literals: Base 10 (0-9)
+		int x =10;
+	 
+	 2. Octal Literals: Base 8 (0-7)
+		-Prefix : 0 (Zero)
+		Ex:
+			int x = 010
+			
+	3. Hexadecimal Literals : Base 16 (0-9, A-F)
+		Prefix: 0x or 0X
+		Ex:
+		
+			int x = 0x10;
+			int x = 0XFACE;
+	
+---------------------------------------------------------
+Floating Point Literals:
+
+-Default: double
+-float = suffix f/F
+-double = suffix d/D (optional)
+
+Ex: 
+	float f = 123.456f;
+	double d = 123456.789;
+	double d = 123456.789D;
+	float d = 123456.789F;
+	double d = OX123456.789; //NA: Error
+	double d = 1.2e35;
+	
+-------------------------------------------------
+Boolean Literals:
+-true or false
+Ex: 
+	boolean b = 0; //Error:
+
+----------------------------------------------
+character Literals: ' ': single quote
+Ex: 
+	char c = 'A';
+	
+unicode Representation : '\u0ABC'
+
+---------------------------------------
+Escape character:
+\n
+\t
+\b
+\'
+\"
+\\
+
+String Literals: 
+-Sequence of characters enclosed within double quotes ("")
+-In Java String : class
+Ex: String s1 = "kiran"; // String literal
+
+Separator: 
+[] : Array
+() : Methods
+{ }: Scope
+
+Wrapper class: Autoboxing and Unboxing
+
+byte -> Byte
+short -> Short
+int -> Integer
+long -> Long
+float -> Float
+double -> Double
+....
+
+Scanner class:
+methods:
+next()
+nextLine()
+nextInt()
+nextByte()
+nextShort()
+nextLong()
+nextFloat()
+nextDouble()
+
+------------------------------
+Date: 28/08/2025
+Day 3 : OOPJ
+------------------------------
+Topics-
+	-Class and Objects
+	-Variables
+	-Reference
+	-Programs
+
+
+
+
+
