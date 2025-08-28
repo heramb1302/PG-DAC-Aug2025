@@ -684,7 +684,151 @@ Topics-
 	-Reference
 	-Programs
 
+OOP:Object Oriented Programming
+-------------------------------- 
+-OOP is a programming paradigm based on the concept of object which contain data(attributes) and methods(behaviour).
+-Java  follows the OOP paradigm, making it easy to organize and mange code effective.
+
+Class:
+-A class is a blueprint or template that defines the properties(attributes/fields)and behaviour (defined by methods) 
+
+Object:
+-An object is an instance of a class.
+
+Ex:
+ class Abc{
+	//Fields
+	Datatype variable;
+	
+	//Methods
+	void m1(){
+	
+	}
+ 
+ }
+ 
+ Syntax: 
+ Classname objectname = new Classname();
+ EX:
+ Abc a1 = new Abc();
+ 
+ ---------------------
+ Class : Blueprint/template 
+ Object : Instance of class
+ Fields : Variables inside the class
+ Methods : Functions inside the class
+ Constructors : Special method used to intialize objects.
+ 
+ Features of OOP:
+ ---------------------
+ 1.Object and Classes : Object are real world entities and classes are their blueprint
+ 2.Encapsulation : Data Hiding implementation details and expressing only necessary functionality.
+ 3.Abstraction : Simplifying complex system by focusing on essential details.
+ 4.Inheritance: Enabling code reuse by creating new classes from existing one.
+ 5.Polymorphism : Allowing one interface to be used for different implementations/
+ 
+ 2 Types of variable:
+ ----------------------
+ 1. Primitive Variables: stores the basic values
+ 
+ 2. Reference variable (Objects): Stores the memory address
+ 
+ 
+ Varibles: In java  variables are container which holds data/values.
+ 1. Local variables: within method, constructor, block
+ 2. Instance variables: DEclared inside the class but outside any method.
+ 3. Static varibles: Declared with static keyword
+ 
+ 
+ Methods:
+ 1. Predefined methods
+	Math.random();// Generate random numbers
+ 
+ 2. Userdefined methods
+ 
+	void display(){
+		....
+		....
+		....
+	}
+	
+	return_type methodname(parameters){
+	
+		
+		return 0;
+	}
+	
+	Ex: void display(){
+	
+	
+	}
+	
+	Ex: int display(){
+		....
+		....
+		return sum;
+	
+	}
+	
+	Ex: boolean display(){
+		....
+		....
+		return true;
+	
+	}
+	
+	Static: keyword
+	-static variable
+	-static method
+	-static Blocks
+	-static class
+	
+	-make use of 'static' keyword
+	Ex: 
+	Static variable:
+	------------------
+	static int x=100;
+	
+	Static method:
+	------------------
+	static void display(){
+	.....
+	}
+	
+	Static block:
+	------------------
+	class Test{
+	
+		static{
+		
+		}
+	}
+	
+	Static class:
+	------------------
+	static class Abc{
+	
+	//Fields
+	//Methods
+	//Main(){}
+	
+	}
+	
+	Nesting of class:
+	------------------
+	class ABC{
+	
+		static class XYZ{
+		
+		
+		}
+	}
 
 
+------------------------------
+Date: 29/08/2025
+Day 4 : OOPJ
+------------------------------
+Topics-
 
 
