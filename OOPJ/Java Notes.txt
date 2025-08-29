@@ -830,5 +830,66 @@ Date: 29/08/2025
 Day 4 : OOPJ
 ------------------------------
 Topics-
+	-Programs
+	-Method overloading
+	-Constructor
+	
+
+Method Overloading:
+- Define multiple methods with same name but different parameters in the sameclass.
+- compile time polymorphism (static polymorphism)
+
+Rules of MEthod Overloading:
+
+1. Method names must be same.
+2. Must have different parameters.
+	a. Number of parameters
+	b. Type of prameter
+	c. Order of paramters
+3. Return type can be different, but only if parameter list is different
+4. Access modifiers can be different but not playing any role in distinguishing factor
+
+Ex: Not overloading
+
+int sum(int a, int b, int c){
+	return a+b+c;
+}
+
+double sum(double a, double b){
+	return a+b; //CE : 
+}
 
 
+Constructor:
+------------------
+-special method in java
+-used to initalize objects
+-It is automatically called when an object is created.
+-mainly used to set intial values for instance variables.
+
+Features:
+------------
+-name has to be same as class
+-No return type for contructors
+-invoked automatically
+
+Types of constructor:
+----------------------
+1.default
+2.parameterized
+
+'this' keyword:
+----------------
+this is a reference that refers to the current object of the class.
+
+this.variable = Refers to the current filed (instance variable)
+this() = call another constructor of same class (constructor chaining)
+
+------------------------------
+Date: 30/08/2025
+Day 5 : OOPJ
+------------------------------
+Topics-
+	-Constructors
+	-Date 
+	-Array
