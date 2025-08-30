@@ -893,3 +893,155 @@ Topics-
 	-Constructors
 	-Date 
 	-Array
+
+	
+	
+	Example1 e1 = new Example1(); 
+		
+		
+	1. Object of same class:
+	-------------------------
+	Example1 e1 = new Example1(); 
+	
+	2. Null object:
+	----------------
+	Example1 e1 = null;
+	
+	3. Object of child class:
+	--------------------------
+	Example e1 = new Example1();
+	Parent p = new Child();
+	
+	Example e = new Example();
+	Example e1 = new Example();
+	Example e2 = new Example();
+	e = e1;
+	e1 = e2;
+	e2 = null;
+	e2 = new Example();
+	
+	Example e5;
+	e5 = e;
+		
+	e.x=5;
+	
+	Packages: Folders: classes, methods, properties, interface, subpackages
+	-A packages in java is a namespace that groups related classes, interfaces, subclasees, etc
+	
+	-helps in modularity, code reusability and maintaenance.
+	
+	Types of packages:
+	1. Built-in packages : predefined by java
+		-java.lang
+		-java.util
+		-java.sql
+		-java.time
+		etc....
+	
+	2.User-defined packeges : created by programmers
+		-helps to group related classes  into custom pakages.
+		
+	syntax: 
+	import java.lang.Array;
+	import java.util.Scanner;
+	import java.util.*;
+	
+	Access Modifiers :
+	-------------------
+	public: Accessible from anywhere
+	private: Accessible only within the class
+	protected: Accessible only within the same package
+	default: (no modifier) : Accessible only within the same packages.
+	
+	Date:
+	------
+	-Represent some specifict instancet in time.
+	-SimpleFormated: 'SimpleDateFormat' for formatting
+	-Constructor: 
+		-Date(): curretn date and time
+		-Date(long ms):specific time 
+	-Common Methods():
+		-long getTime():milliseconds 
+		-boolean before(Date d)/ after(Date d): compare dates
+		-int compareTo(Date d) : compare two dates
+		-toString() : human-readable string/ normal string
+	
+	Calendar:
+	---------
+	-Abstract class fro date manipulation (add, sub, day, diff)
+	-filed based access: YEAR, MONTH, DAY_OF_MONTH,...
+	-local time zone.
+	
+	Calandar cal = Calendar.getInstance();//Curretn date and time
+	
+	methods:
+	-get()
+	-set()
+	-add()
+	-getTime()
+	
+	Formated and parse dates:
+	common pattern: 
+		-dd/mm/yyyy : 30/08/2025
+		-yyyy-MM-DD HH:MM:SS : 2025-08-30 12:30:10
+		
+	Arrays:
+	-------
+	-homogenous  elements, indexed collection, sequential
+	
+	
+	
+	
+	
+	1. Declared an array
+		int arr[];
+	2. Create an array
+		arr[] = new int[5];
+		
+		Single Dimensional Array:
+		--------------------------
+		int arr[] = new int[5];
+		
+		int[] a; //Recommended
+		int a[];
+		int []a;
+		int[5] a; //Error: size not allowed in declaration
+		
+		Multi-Dimensional Array:
+		--------------------------
+		int arr[][] = new int[5][];
+		
+		int arr[][][] = new int[5][][];
+		
+		int[][] a; //2D
+		int []a[]; //allowed
+		int [][][] b; //3D
+		int []a, b;
+		int[] a[], b;
+		int[][] a, b;
+		int[][a,b];
+		
+		int arr[] = new int[5];
+		long ,float, double : array : HW
+		
+		int arr[] = new int[-5];//Error: Exception : NegativeArraysizeException
+		
+		Array Initialize:
+		----------------
+		int arr[] = new int[5];
+		
+		int[] num={1,2,3,4,5,6};
+		
+		Traversing:
+		-----------
+		for(int i=0;i<num.length;i++){
+			SOP(num[i]);
+		}
+
+		Home Work:
+		1. Read matrix of 3X3
+		2. Read 2 matrix 3X3
+		3. Addition , print resultant matrix
+		4. Substraction , print resultant matrix
+		5. Multiplication , print resultant matrix
+		6. Transpose , print resultant matrix
