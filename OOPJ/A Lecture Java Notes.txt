@@ -1038,7 +1038,177 @@ Topics-
 			SOP(num[i]);
 		}
 
-		Home Work:
+		------------------------------
+Date: 01/09/2025
+Day 6 : OOPJ
+------------------------------
+Topics-
+	-Array
+	-Jagged Array
+----------------------
+A Jagged Array in Java is an array of arrays where each sub-array can have different lengths or sizes. Unlike rectangular 2D arrays, the number of columns in each row is not fixed.
+
+Example:
+
+int arr[][] = { {1, 2}, {3, 4, 5, 6}, {7, 8, 9} };
+Here,
+
+Row 1 has 2 elements
+Row 2 has 4 elements
+Row 3 has 3 elements
+
+Declaration:
+	int [] arr = {1,2,3};//1D array intialization
+	
+	int[][] mat = {
+		{1,2,3},
+		{11,22,33},
+		{21,22,23}
+		}; //2D array intialization
+		
+
+Date: 02/09/2025
+Day 7 : OOPJ
+------------------------------
+Topics-
+	-Array
+	-OOPS pillars
+	-Abstraction
+	-Encapsulation
+
+Deep copy and shallow copy:
+-------------------------------
+Shallow copy:
+
+-Copies the reference of the object , not the actual data.
+-Both the original and copied object point tot the same memory.
+-Changes in one object reflect in the other object.
+
+Deep Copy:
+-----------
+-Copies the actual data into a new object.
+-The original and copied objects are independent.
+-Changes in one object do not affect the other.
+
+OOPs:
+------
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+Abstraction:
+-It is a process of hiding internal implementation details and showing only essential functionality to the user.
+
+Hw: Defn, real time examples :2, why we need abstraction, adv/benifits
+
+Key Features: 4ptrs
+-------------
+-hides complex details and shows only essential things.
+-achive abstraction using 'abstract' or 'interface'
+
+
+Techniques:
+---------------
+1.Abstract class (Partial abstraction)
+
+2.Interfaces (100% abstraction)
+
+Concrete class: 
+----------------
+-It is a fully implemented class in java.
+-It has all methods implemented (no abstract methods) and can be instantiated directly.
+-can create objects of the class
+-can contain instance variable, constructors and methods(fully implementd)
+-can extend abstract classes or implement interfaces.
+
+Anonymous class:
+----------------
+-An anonymous class is a class without a name, created on at runtime while instatiating objects.
+-It is often used to provide immediate implementation of abstract class or interface.
+-cannot have a constructor (because it has no name)
+-usually used for one-time use.
+
+Abstract class:
+----------------
+-declared class with 'abstract' keyword
+-can have abstract method(no body) and concrete methods (with body)
+-cannot instantiate abstract class diretly,require subclass(inheritance) 
+
+
+abstract class Book{
+	String title;
+	
+	abstract void display(); //abstract method
+	
+	
+	void show(){ //concrete method/instance method/non-static method
+		SOP (title);
+	}
+
+}
+
+class Bookdata extends Book{
+void display(){
+....
+}
+
+}
+
+HW:
+Abstraction
+Abstract class
+Abstract Method
+Adv
+Disadv
+Real-time eg.
+
+Abstract class vs interface
+
+
+Interface: (100% Abstraction)
+------------------------------
+-A blueprint for a class
+-contain abstract methods and constant
+-Classes implements interfaces using 'implements'.
+-From Java 8, interfaces can also have default(instance method) and static methods
+
+Ex:
+
+interface Shape{
+	int pi=3.14;
+	double area();//abstract method
+	void display(){
+	
+	}
+}
+
+class Demo implements Shape{
+
+}
+
+Encapsulation:
+--------------
+
+class: instance variable, method()
+
+
+-It is one of the fundamental principle of OOP that binds data and methods into single unit, hiding internal implementation details and providing controlled access through public methods.
+-combine data members and methods into single unit.
+-restricts direct access to data members.
+-provide public 'getter' and 'setter' methods to access and modify private data.
+-It ensures data hiding and data security.
+-Improves code reusability and modularity.
+
+Encapsulation implementation:
+-----------------------------
+1. Declaring instance variable as 'private'
+2. Providing 'getter-setter' methods to access and modify the private variables.
+3. Implementing data validation within setter methods.
+
+
+
+
 		1. Read matrix of 3X3
 		2. Read 2 matrix 3X3
 		3. Addition , print resultant matrix
