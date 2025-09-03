@@ -1215,3 +1215,170 @@ Encapsulation implementation:
 		4. Substraction , print resultant matrix
 		5. Multiplication , print resultant matrix
 		6. Transpose , print resultant matrix
+
+------------------------------
+Date: 03/09/2025
+Day 8 : OOPJ
+------------------------------
+Topics-
+	-Abstraction
+	-Encapsulation
+	-Inheritance
+	-Polymorphism
+	
+
+class: A blueprint for creating objects.
+Super class (Parent class) : The class whose properties are inherited
+Sub class (child class) : The class that inherits properties from another class
+Reusability: Using existing methods and filelds of a super class in a subclass.
+
+Inheritance: 
+-It is a mechanism in Java where a class(child class)  acquire properties(fields) and behaviour(methods) from another class (PArent class).
+-It promotes reusability, hierarcical organization and polymorphism
+-REpresents IS-A relationship
+-Helps avoid redundant code by reusing common functionalities.
+
+Syntax:
+
+class Parent{
+}
+
+
+class Child extends Parent{
+}
+
+
+class Demo extends Child{
+}
+
+Types of Inheritance:
+----------------------
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Hierarchical Inheritance
+
+Object creation: 
+------------------
+1. Parent p = new Parent();
+
+2. Parent p = null;
+
+3. Parent p = new child();
+	Child c = new Parent();
+	
+Interface:
+-----------
+-A blueprint for a class
+-contain abstract methods and constants by default(Java 8)
+-cannot have a method body, only method declaration
+-need to achive 100% abstraction and multiple inheritance
+-Java 8: Interface can have default and static methods
+-Java 9: Interface can have private methods
+
+syntax:
+interface Name{
+	//cosntant variables ( implicit public, static, final)
+	//Abstract methods (implicit public and abstract)
+}
+
+interface Book{
+
+	//constant variable
+	int x=100;
+	//abstract method
+	void read();
+	//default method: Java 8+
+	void show(){
+	SOP()
+	}
+	//static method : Java 9+
+	static void display(){
+		SOP();
+	}
+	//Private methods : Java 9+
+	private void print(){
+	}
+	
+}
+
+Polymorphism:
+-----------------
+-Poly=many, morphism=forms : many forms
+-Types of polymorphism:
+	1. Compile time Polymorphism : Static
+		-method overloading
+		
+	2. Runtime Polymorphism : Dynamic 
+		-method overriding
+
+//MEthod overloading	: Compile time
+class XYZ{
+int sum(int a, int b){
+		return a+b;
+	}
+	int sum(int a, float b, int c){
+		return a+b+c;
+	}
+}
+
+class Abc{
+	int sum(int a, int b){
+		return a+b;
+	}
+	int sum(int a, float b, int c){
+		return a+b+c;
+	}
+}
+
+class Demo{
+
+Demo d = new Demo();
+d.sum();//Error
+
+Abc d1 = new Abc();
+d1.sum(2,3);
+d1.sum(2,3,4);
+
+Xyz d2 = new Xyz();
+d2.sum(2,3);
+d2.sum(2,3,4);
+}
+
+Rules for Overrriding:
+-------------------------
+1. Same method signature:
+-same name
+-same parameter list
+-same return type(covarient return type)
+
+2. Inheritance is manadatory
+-method overriding can occur when subclass inherits parent class
+
+3. Access modifiers
+private
+default
+protected
+public
+Ex: parent class= public : child class : public
+Ex: parent class= protected : child class :protected , public
+Ex: parent class= default : child class : default, protected , public
+
+Important Note: 
+---------------
+-private: cannot inherit 
+-satic: can be redefined but not overridden
+-final: cannot be override
+
+4. Constructors cannot be overriden
+
+HW: diff method overloading and overrriding (10pts)
+
+@Override: annotation:
+
+'super' keyword:
+-----------------
+-It is used to refer to the parent class(Super class)
+-It allows subclasses to access methods, constructors and fields of their parent class.
+	-To call the Superclass contructor: 'super()'
+	-To call the Superclass method: 'super.methodname()'
+	-To call the Superclass field: 'super.variablename'
