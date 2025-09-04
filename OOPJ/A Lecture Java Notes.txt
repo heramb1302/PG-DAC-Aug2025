@@ -1382,3 +1382,65 @@ HW: diff method overloading and overrriding (10pts)
 	-To call the Superclass contructor: 'super()'
 	-To call the Superclass method: 'super.methodname()'
 	-To call the Superclass field: 'super.variablename'
+
+------------------------------
+Date: 03/09/2025
+Day 9 : OOPJ
+------------------------------
+Topics-
+	-Inheritance
+	-Polymorphism
+	-OVerriding
+	-Super
+	-Upcasting & downcasting
+	-instanceof
+	-Association
+
+Upcasting & downcasting:
+-key concept used in polymorphism anf type hierarchy
+
+Upcasting: converting child class  type reference into parent class type
+	-allows child class object to be treated as parent class object
+	A x = new B();// Upcasting
+	
+Downcasting: converting parent class type reference into child class type
+	-Enables calling of child class methods by converting parent class type into child class type
+	B y = (B) x;//Downcasting
+	
+
+Association:
+------------
+-Association represents a relationship between two separate classes that arerelated but can exist independently.
+-Type: 
+	-one-to-one
+	-one-to-many
+	-many-to-one
+	-many-to-many
+	
+Association:
+-----------------
+-RElationship between 2 classes
+--Type: 
+	-one-to-one
+	-one-to-many
+	-many-to-one
+	-many-to-many
+-Dependency: objects can exist independetly.
+-EX: Teacher-Student
+
+
+Aggregation:
+-------------
+-One class has a reference to another class
+-Weak Relationship
+-Dependency: Objects can exist independently
+-EX: Employee-Address
+
+
+Compostion:
+--------------
+-One class owns another class
+-Strong Relationship
+-Contained objects cannot exist without container
+-Dependency: Dependent: If container onject os destroyed then contained objects is also destroyed.
+-EX: Car-Engine
