@@ -1444,3 +1444,124 @@ Compostion:
 -Contained objects cannot exist without container
 -Dependency: Dependent: If container onject os destroyed then contained objects is also destroyed.
 -EX: Car-Engine
+
+
+------------------------------
+Date: 07/09/2025
+Day 10 : OOPJ
+------------------------------
+Topics-
+	-Final variable
+	-String
+	-Garbage collection
+	
+final, finalize() and finally
+
+'final' keyword:
+----------------
+final : In java used to restrict modifications 
+	1. Final variable:
+		-value cannot be changed(constant)
+	2. Final Method:
+		-cannot override that method
+	3. Final class:
+		-cannot be inherited
+		
+	Use : 'final'
+	-------------
+	-final variables: constant
+	-final methods: overriding prevent
+	-final class: inheritance prevent
+	-final reference variable :reference should not change(but the object can be modified)
+	
+Garbage Collection in Java:
+-Garbage collection is an automatic process in which the JVM reclaims memory from objects that are no longer in use or not reachable.
+
+Key pointers:
+1. Helps in automatic memory management
+2. Uses the Garbage Collector (GC) to free up the heap memory
+3. Works on objects that are no longer required/ referenced
+
+Methods used for Garbage collections:
+-----------------------------------
+1. Sysytem.gc(); //Request GC to run
+
+2. Runtime.getRuntime().gc(); //Another way to request GC
+
+Techniques to make objecst eligible for GC:
+---------------------------------------------
+1. Nulling a reference variable:
+-Setting object reference to null, which makes it unreachable.
+
+A a1 = new A();
+A a2 = new A();
+a1 = null;
+a2 = null;
+
+2.Re-Assigning  a reference variable
+-Object reference is re assigned to another object, the previous object becouse unreachable.
+
+A a1 = new A();
+A a2 = new A();
+A a3 = new A();
+A a4 = new A();
+
+a1 = a2;
+a3 = a4
+a2 = a3
+a1 = a4
+
+3. Island of Isolation:
+-When object reference each other but are not reference elsewhere, they become unreachable
+
+A a1 = new A();
+A a2 = new A();
+A a3 = new A();
+
+a3 = a1;
+a1 = a2;
+a2 = a3;
+
+class A{
+	A a;//Reference
+	int x;
+	
+	p.s.v.main(){
+	
+	A a1 = new A();
+	A a2 = new A();
+	A a3 = new A();
+	
+	a1.a = a3;
+	a3.a = a2;
+	a2.a = a1;
+	
+	a1=null;
+	a2=null;
+	a3=null;
+	
+	
+	}
+}
+
+finalize():
+-It is called before an object is garbage collected to perform cleanup operations.
+-Object class
+-cleanup activities
+-Syntax:
+	protected void finalize(){
+		//Cleanup code
+	}
+	
+
+String:
+--------
+-It is an object thet represents a sequence of characters.
+-java.lang.String 
+-Immutable: cannot be changed  after creation
+-String Pool: stored in a special memory area called String Pool
+-Interface: Serializable, Comparable, CharSequence
+
+-2 ways:
+	-String literals (REcommaended way)
+	-new keyword ( creates a new object in heap memory)
