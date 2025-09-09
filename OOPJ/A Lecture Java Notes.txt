@@ -1565,3 +1565,270 @@ String:
 -2 ways:
 	-String literals (REcommaended way)
 	-new keyword ( creates a new object in heap memory)
+
+------------------------------
+Date: 08/09/2025
+Day 11 : OOPJ
+------------------------------
+Topics-
+	-String
+	-Wrapper class
+	-Exception Handling
+	
+
+String:
+--------
+-It is an object thet represents a sequence of characters.
+-java.lang.String 
+-Immutable: cannot be changed  after creation
+-String Pool: stored in a special memory area called String Pool
+-Interface: Serializable, Comparable, CharSequence
+
+-2 ways:
+	-String literals (REcommaended way)
+	-new keyword ( creates a new object in heap memory)
+	
+Important String Methods:
+--------------------------
+length() : REturn the length of the string
+charAt(index) :REturn character at a specific index
+substring(beginIndex, endIndex)): Extract substring
+conatains(str) : checks if string contains another string.
+indexOf(str): Return index of first occurance
+toLowerCase(): Converts to lowercase
+toUpperCase(): Converts to uppercase
+trim() : Removes leading and training spaces
+replace(old, new) : Replace a character or sequence
+reverse() : Revers the string
+
+
+String str = "Java Programming is interestring."
+str.reverse();
+
+StringBuilder:  (Mutable & Fast)
+----------------------------------
+-A mutable sequence of characters
+-Uses heap memory for storage
+-Performance: Quite faster than String class
+-Wheneve we need to modify the strings frequently in single threaded environmentwe can utilize STringBuilder.
+-Not a thread safe (not synchronized)
+
+
+StringBuffer:  (Mutable & Thread-safe)
+-----------------------------------------
+-Similar to StringBuilder, but thread-safe (synchronnized method)
+-Uses heap memory for storage
+-Performance: Slower than the StringBuilder
+-Whenever we need to modify the string frequently it modifies in multi-threaded environment.
+-Thread-safe (synchronized)
+
+
+intern():
+
+Wrapper class: 
+1. Autoboxing : Primitive data type --> Wrapper class object
+
+	int num =10;
+	Integer n1 = num;//Autoboxing (int-> Integer)
+
+2. Unboxing : Wrapper Class Object --> Primitive data type
+
+	Integer n1 = new Integer(20);
+	int num = n1; //Unboxing  (Integer --> int)
+	
+	parseXXX : String data ---> data type conversion
+	Integer.ValueOf() : Wrapper class data ---> data type
+	ShortValue()
+	
+Exception Handling:
+--------------------
+Error: System-level-problem, serious mistakes ,not meant for handled.
+-OutOfMemoryError
+	-Thrown when JVM cannot allocate memory
+-StackOverflowError
+	-Thrown when a method keeps calling itself recursively without a base condition.
+
+Exception: Application-level-problem, should be handled.
+-Exception handling is aa mechanism to handle runtime error and maintain the normal flow of the application.
+-Exception occurs when the normal execution flow is distrupted.
+-exception handling : mechanisum :try, catch, finally, throw, throws
+
+Types of Exception:
+-----------------
+1. Checked Exception: Compile-time Exception
+-Must be handled using try-catch  or declared using throws
+-Ex: IOException, ClassNotFoundException
+
+2. Unchecked Exception: Runtime Exceptions
+-Do not require mandatory handling
+-Ex: ArithmetheticException, ClassCastException
+
+------------------------------
+Date: 08/09/2025
+Day 12 : OOPJ
+------------------------------
+Topics-
+	-Exception Handling
+	-Unchecked Exception
+	-Checked Exception
+	-Userdefined Exception
+
+Topics: 
+	- Exception Handling
+Exception Handling:
+--------------------
+-Exception Handling in Java is a mechanism to handle runtime errors and maintain the normal flow of the application.
+-Exceptions occur when the normal execution flow is disrupted, such as invalid user input, file not found, division by zero, etc.
+-Java provides a robust exception-handling mechanism using try, catch, finally, throw, and throws.
+
+Exception:
+------------
+-An exception is an event that occurs during the execution of a program and disrupts the normal flow of instructions.
+-Exceptions are represented as objects in Java and belong to the java.lang.Exception class hierarchy.
+
+Ex: Exception Occurrence
+
+public class ExceptionExample {
+    public static void main(String[] args) {
+        int result = 10 / 0; // Throws ArithmeticException
+    }
+}
+
+
+O/P : Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+Types of Exceptions:
+---------------------
+1. Checked Exceptions (Compile-time exceptions):
+
+	-Must be handled using try-catch or declared using throws.
+	-Examples: IOException, SQLException, FileNotFoundException.
+
+2. Unchecked Exceptions (Runtime exceptions)
+
+	-Do not require mandatory handling.
+	-Examples: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.
+
+Try-Catch Block:
+-----------------
+-Used to handle exceptions gracefully.
+Syntax:
+try {
+    // Code that may cause an exception
+} catch (ExceptionType e) {
+    // Handling code
+}
+
+Keywords in Exception Handling:
+-------------------------------
+try: Encloses code that might throw an exception.
+
+Syntax:
+	try {
+		// code that may throw an exception
+	}
+	
+catch:Catches and handles exceptions thrown in the try block.
+
+Syntax:
+	catch(ExceptionType e) {
+		// exception handling code
+	}
+	
+	
+finally:Executes code regardless of whether an exception was thrown or not; useful for cleanup.
+
+Syntax:
+finally {
+    // code that always executes
+}
+
+throw:Explicitly throws an exception.
+
+Syntax:
+	throw new ExceptionType("error message");	
+	
+throws:Declares that a method may throw one or more exceptions.
+
+Syntax:
+	public void myMethod() throws ExceptionType {
+		// method code
+	}
+
+try-with-resources:Automatically manages resource closing, introduced in Java 7.
+
+Syntax:
+	try (ResourceType resource = new ResourceType()) {
+		// work with resource
+	} catch(ExceptionType e) {
+		// handle exception
+	}
+	
+Finally Block:
+--------------
+The finally block always executes whether an exception occurs or not.
+Used for cleanup operations like closing files, database connections, etc.
+
+Ex: Using Finally Block
+
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int data = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught");
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+	
+Use of finally Block:
+---------------------
+-The finally block in Java is used for cleanup operations, such as closing a file, releasing database connections, or printing important messages. It executes regardless of whether an exception occurs or not.
+
+Remember:
+---------
+1. No Exception Occurs -> finally block executes after try.
+2. Exception Occurs, Not Handled ->	finally executes, then program crashes.
+3. Exception Occurs, Handled ->	catch handles the exception, finally executes, and program continues.
+4. System.exit(0) is Used -> finally does not execute.
+5. Used for Resource Cleanup->	Ensures resources (files, DB connections) are closed properly.
+
+1. Checked Exceptions
+---------------------
+Definition: Exceptions that are checked at compile-time.
+-Compiler forces you to handle them using try-catch or declare them using throws.
+-Usually occur due to external factors (like file, database, network).
+-Example: IOException, SQLException, ClassNotFoundException.
+
+import java.io.*;
+
+public class CheckedDemo {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("file.txt"); // File may not exist
+        } catch (IOException e) {
+            System.out.println("Checked Exception caught: " + e);
+        }
+    }
+}
+
+2. Unchecked Exceptions
+-----------------------
+Definition: Exceptions that are not checked at compile-time.
+-They occur at runtime (programming mistakes).
+-The compiler does not force you to handle them.
+-Example: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException.
+
+public class UncheckedDemo {
+    public static void main(String[] args) {
+        int result = 10 / 0; // Will throw ArithmeticException at runtime
+        System.out.println("Result: " + result);
+    }
+}
+
+Remember:
+---------
+-Checked = "You MUST handle me at compile-time" (external problems).
+-Unchecked = "I’ll surprise you at runtime if you code wrongly." (bugs in logic).
+
