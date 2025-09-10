@@ -1832,3 +1832,214 @@ Remember:
 -Checked = "You MUST handle me at compile-time" (external problems).
 -Unchecked = "I’ll surprise you at runtime if you code wrongly." (bugs in logic).
 
+------------------------------
+Date: 08/09/2025
+Day 14 : OOPJ
+------------------------------
+Topics-
+	-Object class
+	-Packages
+	-Access Modifier
+	-Collections
+
+Object class:
+--------------
+-package : java.lang
+-root in hierarchy : every class directly or indirectly is accessing this object class.
+-If a class does not explicitly extends another class, it is considered as Object class.
+-Object class methods:
+	
+	-toString() : return string representation of the object
+	-equals()	: compares two objects for equality
+	-hashCode() : return hash code of the object
+	-------------------------------------------------
+	-clone()	: create clone of the object
+	-------------------------------------------------
+	-getClass() : returns the runtime name of class of the object
+	-------------------------------------------------
+	-finalize() : called by GC before object destruction
+	--------------------------------------------------
+	-wait()		: causes the current thread to wait
+	-notify()	: wakes up the thread on the object's monitor
+	-notifyAll() : wakes up all the thread waiting on the object's monitor
+	
+	Access Modifier:
+	-----------------
+	
+	-private : accessible only within the same class
+		-Scope: same class
+		-used to restrict access to classmember (fields & methods)
+		-Not accessible outside the class (even subclasses )
+		
+	-default : (no modifier) : accessible within the same package
+		-scope: same package
+		-useful when classes belongs to the same package
+		
+	-protected : accessible within the same package and by subclasses in different packages
+		-scope: acces in sam epackahe and in subclasses
+		-used with inheritance when child class need access to parent class 
+		
+	-public : accessible from anywhere
+	
+	Non-Access Modifier:
+	---------------------
+	-static
+	-final
+	-abstract
+	-sychronized
+	-volatile
+	-transient
+	-native
+	-strictfp
+---------------------------------------------------
+Collections:
+
+
+class Employee{
+	int id;
+	String name;
+	e1--->20 parameters
+	
+	int arr[] = new int[10000];
+	Employee e1;
+	
+	Array of Objects:
+	e[10000];
+
+}
+
+Java Collection :
+-----------------
+-a group of objects.
+
+
+Collection:
+-------------
+-Any group of individual objects which are represented as a single unit is known as the collection of the object.
+
+Framework:
+----------
+-A framework is set of classes and interfaces which provides readymade solutions  or architecture.
+
+Collection Framework:
+---------------------
+-Collection Framework is Java API (Application PRogramming Interface) which provides architecture to store and manipulate group of objects.
+
+CRUD: Create-Read-Update-Delete
+
+Java Collection Framework: (JCF)
+----------------------------------
+-Collection Framework is Java API (Application PRogramming Interface) which provides architecture to store and manipulate group of objects.
+
+
+Adv:
+---
+1. Dynamic in size
+2. In-built methods for manipulation
+3. Better performance and flexibility
+
+
+Collection: Root interface:
+-Extends Iterable class  and it's aparent of all collection interface.
+
+List:
+	-Ordered collection, allow duplicates
+	
+Set:
+	-Unordered, does not allow duplicate elements.
+	
+Queue:
+	-Follows FIFO(First In First Out) order
+
+Map:Not a part of collection interface
+	-Stores key-value pairs
+
+
+List Interface:
+----------------
+	-Ordered collection
+	-Allows duplicates elements
+	-Maintains insertion order
+	-Implementation
+		-ArrayList : Dynamic array, fast read access
+		-LinkedList : Doubly Linked list, fast insert/delete
+		-Vector : Thread-safe, legacy classes
+		
+	ArrayList a1 = new ArrayList();
+	ArrayList<String> a1 = new ArrayList<>();
+	ArrayList<Integer> a1 = new ArrayList<>();
+	
+	List l1 = new ArrayList();
+	List<Integer> l1 = new ArrayList<>();
+	
+	Collection c = new ArrayList();
+	Collection<String> c = new ArrayList<>();
+	
+	LinkedList l1 = new LinkedList();
+	LinkedList<String> l1 = new LinkedList<>();
+	
+Set Interface:
+---------------
+	-Unordered
+	-Does not allow duplicate values
+	-Implementation
+		-HashSet : Unordered, fast operations
+		-LinkedHashSet: Maintains insertion order
+		-TreeSet : Sorted order
+		
+	HashSet h1 = new HashSet();
+	LinkedHashSet l1 = new LinkedHashSet();
+	TreeSet t1 = new TreeSet();
+	
+	HashSet<Integer> h1 = new HashSet<>();
+	LinkedHashSet<Float> l1 = new LinkedHashSet<>();
+	TreeSet<String> t1 = new TreeSet<>();
+	
+	Set<Integer> h1 = new HashSet<>();
+	Set<Float> l1 = new LinkedHashSet<>();
+	Set<String> t1 = new TreeSet<>();
+	
+	HashSet<Integer> h1 = new HashSet<>();
+	LinkedHashSet<Float> l1 = new LinkedHashSet<>();
+	SortedSet<String> t1 = new TreeSet<>();
+	
+	Collection<Integer> h1 = new HashSet<>();
+	Collection<Float> l1 = new LinkedHashSet<>();
+	Collection<String> t1 = new TreeSet<>();
+	
+	
+Queue:
+	-FIFO
+	-Implementations
+		-PriorityQueue : Ordered elements based on priority
+		-LinkedList : Deque implementation
+		
+		Queue q1 = new PriorityQueue();
+		Queue<Integer> q1 = new PriorityQueue<>();
+		PriorityQueue<Integer> q1 = new PriorityQueue<>();
+		LinkedList<Integer> q1 = new ArrayDequeue<>();
+		
+Map Interface : Key-Value Pair
+	-Not a part of collection interface
+	-does not allow duplicate keys, but allows duplicate vlaue
+	-Implementations
+		-HashMap : Unordered, fast lookup
+		-LinkedHashMap : Maintain insertion order
+		-TreeMap : sorted keys
+		
+		HomeWork :Todo App:
+		-----------------------
+		while(){
+		sop(Enter choice)
+		1.Add
+		2.view
+		3.remove
+		4.exit
+		
+		enter choice:1
+		}
+		switch(ch)
+		{
+		case 1: 
+		}
+
