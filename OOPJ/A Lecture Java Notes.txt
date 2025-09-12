@@ -2043,3 +2043,214 @@ Map Interface : Key-Value Pair
 		case 1: 
 		}
 
+-----------------
+Meeting Id: 81940226085
+Key: 12345
+https://docs.oracle.com/javase/8/docs/api/
+------------------------------
+Date: 12/09/2025
+Day 16 : OOPJ
+------------------------------
+Topics-
+	-Generics
+	-Reflection
+	-Inner classes
+	-Multithreading
+	
+Generics:
+-------------
+-Generics allows defining classes, interfaces, and methods with type paprameter.
+-type safety,code reusability, and compile time with type checking
+-Introduced in Java 5: part of Collection Framework
+
+Synatax of Generics:
+---------------------
+class Classname <T>{
+
+}
+
+<T> : represent type parameter
+<T, U, V> : represents multiple parameters
+<E> : Element
+<K,V> : Key, value pair (used in map)
+
+Type Parameter Naming conventions:
+--------------------------------------
+T : Type
+E : Element
+K : Key
+V : Values
+N : Number
+
+
+Genric classes:
+----------------
+-Classes defined with type parameters using <> (diamond brackets)
+-It can accept one or more type parameters.
+
+
+Reflection:
+------------
+-Reflection is a feature that allows programs to inspect and modify classes, methods, fields and constructors at runtime, without knowing their names at compile time.
+
+-Package: java.lang.reflect
+
+Key Classes/Interfaces:
+-----------------------
+class : Represents a class at runtime.
+Method : Represents a method of a class.
+Field : Represents a field(variables) of a class.
+Constructor: Represents a constructor of a class.
+
+Inner classes:
+--------------
+A inner class is a class defined inside another class.
+Types: 
+
+1. Regular Inner class /(Non-static nested class):
+
+-define inside another class without static keyword
+-instance class variable and methods can asccess
+
+
+2.Static Nested Class
+
+3.Method-local Inner Class
+
+4.Anonymous class
+
+
+Lambda Expression:
+-------------------
+-It is a concise way to represent anonymous functions(methods without names)
+-Java 8 for
+-Used to implement functional interfaces(interface with single abstract method)
+-code readability and  to reduce boilerplate code
+
+Syntax:
+
+(parameter) -> expression
+
+or
+
+(parameter) -> {statements}
+
+Functional Interface:
+----------------------
+-Required for Lambda functions
+-It contains exactly one abstract method
+-Ex: Comparator, Callble, Runnable, etc
+-also create custom functional interface @FunctionalInterface
+
+Ex:
+
+@Functional Interface
+interface MyTest{
+	void display();
+
+}
+
+Syntax:
+
+(parameter) -> expression
+
+or
+
+(parameter) -> {statements}
+Ex:
+
+(a,b) -> a*b
+
+(num) -> { System.out.println(num);}
+
+Multithreading:
+-----------------
+-It is a programming technique in Java that allows multiple threads to run concurrently within a single program.
+-Each thread is a separate path of execution.
+-Multithreading is useful for tasks like:
+-Performing background calculations
+-Handling multiple user requests in a web server
+
+Key Benefits:
+--------------
+1. Better CPU utilization
+2. Faster response time
+3. Improved application performance
+4. Useful in parallel processing and asynchronous tasks
+
+Main Thread:
+--------------
+- A thread is the smallest unit of execution in a program.
+- Java is multithreaded: multiple parts (threads) can run concurrently.
+- When any Java application starts, a Main Thread is automatically created by the JVM (Java Virtual Machine).
+- This thread starts execution from the `main()` method.
+
+Properties of Main Thread:
+-----------------------------
+- It is the first thread created when the program begins.
+- Child threads can be spawned from the Main thread.
+- Typically, it is the last to finish, ensuring proper shutdown.
+- The default priority of the main thread is 5 (NORM_PRIORITY).
+- Priority is inherited: child threads inherit priority from the main thread.
+
+
+	
+Main Thread:
+--------------
+- A thread is the smallest unit of execution in a program.
+- Java is multithreaded: multiple parts (threads) can run concurrently.
+- When any Java application starts, a Main Thread is automatically created by the JVM (Java Virtual Machine).
+- This thread starts execution from the `main()` method.
+
+Properties of Main Thread:
+-----------------------------
+- It is the first thread created when the program begins.
+- Child threads can be spawned from the Main thread.
+- Typically, it is the last to finish, ensuring proper shutdown.
+- The default priority of the main thread is 5 (NORM_PRIORITY).
+- Priority is inherited: child threads inherit priority from the main thread.
+	
+	
+Lifecycle and States of a Thread in Java:
+-------------------------------------------
+-A thread in Java goes through multiple states during its lifecycle.
+-At any given time, a thread is in one of six states.
+-Thread States in Java:
+	-New
+	-Runnable
+	-Blocked
+	-Waiting
+	-Timed Waiting
+	-Terminated
+	
+-New → Created but not started (NEW).
+-Runnable → Ready to run but waiting for CPU (RUNNABLE).
+-Blocked → Waiting for another thread to release a lock (BLOCKED).
+-Waiting → Waiting indefinitely (WAITING).
+-Timed Waiting → Waiting for a fixed time (TIMED_WAITING).
+-Terminated → Thread has finished execution (TERMINATED).	
+
+ Single Thread:
+ ------------------
+public class SingleThreadExample {
+    public static void main(String[] args) {
+        System.out.println("T1");
+        System.out.println("T2");
+    }
+}
+
+Multithreading:
+------------------
+class Task extends Thread {
+    public void run() {
+        System.out.println("Running thread: " + Thread.currentThread().getName());
+    }
+
+    public static void main(String[] args) {
+        Task t1 = new Task();
+        Task t2 = new Task();
+        t1.start();
+        t2.start();
+    }
+}
+ 
