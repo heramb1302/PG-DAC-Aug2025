@@ -1,0 +1,131 @@
+Date: 15/09/2025
+-------------------------------------
+Day1: Algorithms and Data Structure
+-------------------------------------
+Logic: build a logic
+
+Data : Collection of Raw facts.
+
+Algorithm: The essence of computational procudure, step by step instructions.
+
+Program:An implementation of an algorithm in some programming language is called as program.
+
+Data Structure: Organization of data needed to solvw the problem.
+
+Algorithm:
+-The algorithm is a sequence of unambiguous instructions/ operations for solving a problem, for obtaining a required output for any legitamate input in a finite amount of time.
+
+-A step by step procedure to solve a problem or perform any taks.
+
+Characteristic of Algorithm:
+--------------------------------
+1. Finite: must terminate after a finite number of steps.
+2. Definite: each step must be precisely defined.(same as unambiguous)
+3. Input: takes zero or more number of inputs.
+4. Output: produces at least one output.
+5. Effective: each step must be basic and achievable.
+
+Types of /Strategies of Algorithm:
+----------------------------------
+1. Greedy Algorithm:
+	-Makes the locally optimal choice at each step with the hope of finding a global optimum.
+	
+2. Divide and Conquer:
+	-Breaks the problem into smaller subproblems, solves them recursively and combines the result.
+	
+3. Dynamic Programming: 
+	-Solves complex problems into smaller subproblems, solves them recursively and simplify it into similar subproblems and solve each one of them.
+
+4. Backtracking: 
+	-Tries all possible solutions among those that fails to satisfy the problem's contraint.
+	
+5. Brute Force:
+	-Tries all possible solutions untill the correct one is found.
+	
+6. Recursion:
+	-Solves a problem by solving the smaller instances of the same problem.
+	
+7. Search Algorithms:
+	-Finds an element in a data structure.
+	
+8. Sorting Algorithms:
+	-Order the element in a particular sequence.
+	
+Data Structures:
+---------------------
+-A way of organizing , managing and storing data to enable efficent access and modifications.
+-Program = Algorithm + Data Structure : (Logic)
+
+Types of Data Structures:
+----------------------------
+1. Linear Data Structure
+	-Data elements are arranged sequentially
+	-Array: 
+		-A collections of data elements, stored in contiguous memory locations.
+	-LinkedList:
+		-A collections of data elements, where each element points to the next.
+	-Stack: 
+		-Follows Last-In-First-Out (LIFO) principle.
+	-Queue:
+		-Follows First-In-First-Out (FIFO) principle.
+	-Hash Table:
+		-Stores key-value pairs, offering fast lookup(search)
+		
+2. Non-linear Data Structure
+	-Data elements are arranged in hierarchical or in network (non linearly and in some relationship one-many, many-one and many -many)
+	-Trees:
+		-A hierarchical structure with root, nodes, and edges.
+	-Graph:
+		-Consists of nodes(verticle) connected by edges.
+	-Heap:
+		-A complete binary tree that maintains a specific order.
+	
+ADT: Abstract Data Type:
+--------------------------
+-It is a type/class  for objects whose behaviour is defined by value and a set of opertaions.
+-It is called as 'abstract' because it gives an implementation-independent view.
+-This process of providing only essentials for implementation and hiding the details is known as abstraction.
+
+Operation on Data structures:
+------------------------------
+1. Insertion : Adding new elements 
+2. Deletion : Removing an elements
+3. Traversing : Accessing each element
+4. Searching : Finding an element
+5. Sorting : Arranging elements in a particular order.
+6. Merging: Combining two strucutres into one.
+
+HW: Diff Linear and Nonlinear : 10 ptr
+HW: Diff Static and Dynamic Data Structure
+
+Recursion:
+------------
+-Any functions which calls itself directly/indirectly is called Recursion
+
+void  show(){
+
+ show();//calling a copy of show()
+}
+
+int main(){
+show()
+}
+
+Direct Recursion:
+------------------
+
+void display()
+{
+	display();
+}
+
+Indirect Recursion:
+-------------------
+void display()
+{
+	show();
+}
+
+void show(){
+	display()
+}
