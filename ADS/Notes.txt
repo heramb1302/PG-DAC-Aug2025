@@ -129,3 +129,91 @@ void display()
 void show(){
 	display()
 }
+
+Date: 16/09/2025
+-------------------------------------
+Day2: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	
+	-Recursion
+	-Arrays
+	
+Base condition:Termination condition
+-It provides the termination condition for recursion.
+
+Recursive case:
+-It moves towards the base condition by reducing the problem size in each step.
+	
+Iterative:
+-Terminates when the loop condition becomes false.
+
+Recursion:
+-Terminates when base condition becoes true.
+
+Fibonacci Series:
+-------------------
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 ......
+
+I/P= 5 :recursive
+5*1=5
+;
+;
+;
+5*10=50
+
+DataType
+Data strucutre
+
+Arrays:
+-------
+- Finite
+- Ordered
+- Homogeneous
+
+-nEED OF AN ARRAY:
+----------------------
+-storing the data for processing
+-implementation data structure such stack, queue, heap, etc
+-represents data in tables(1-D) and matrix(2-D)
+-create dynamic array using data structure linked linked list and trees.
+
+
+Address of Memory location: A[i] = M + (i-L) *w
+
+Size(A) = U - L +1
+U = upper limit
+L = lower limit
+
+
+Array Operations:
+----------------
+Insertion
+DEletion
+Traversal
+Searching
+Sorting
+
+Applications of array:
+----------------------
+add any 4 applications
+
+
+Algorithm Performance: Analysis
+--------------------------------
+1. Time complexity : O(1), log(n), O(n), O(n^2).... O(2^n) O(2!) O(n^n)
+
+2. Space complexity : O(1), log(n), O(n), O(n^2).... O(2^n) O(2!) O(n^n)
+
+System.out.println(arr[4])
+
+Array Operations: Time Complexity
+------------------------------------
+Accessing an element: O(1)
+Search an element: O(n)
+Insertion of an element : O(n)
+Deletion of an element: O(n)
+
+Linear Search: Time Complexity: O(n)
+
+Binary Search: Time Complexity: O(log n)
