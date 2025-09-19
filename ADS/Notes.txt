@@ -384,3 +384,172 @@ class LL{
 	prev.next = temp.next;
 	
 	}
+Date: 19/09/2025
+-------------------------------------
+Day 4: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- LinkedList
+	- Doubly LinkedList
+	
+	
+1. Count the number of nodes in linkedlist
+
+
+
+int counter(){
+	Node temp = head;
+	int count=0;
+	while(temp != null){
+		count++;
+		temp = temp.next;
+	}
+	return count;
+	
+}
+
+2. Write recursive function to get the vount of linkedlist
+
+
+	int getcount(Node n){
+	
+	
+		if(n == null)
+			return 0;
+			
+		return 1+ getcount(n.next)
+		
+		
+	}
+
+3. write a finction to search a given key in linked list
+//Search operation in linkedlist
+
+
+boolean search(Node head, int x){
+
+Node n = head;
+while(n != null){
+	if(n.data == x)
+		return true;
+	
+	n=n.next;
+}
+return false;
+
+
+}
+
+4. write a finction to reverse of a linkedlist
+
+SL : 10	20	30	40
+RSL: 40	30	20	10
+
+
+Node reverse(Node n){
+	Node prev = null;
+	Node curr = n;//head
+	Node next = null;
+	
+	while(curr != null){
+		next = curr.next;
+		curr.next = prev;
+		prev = curr;
+		curr = next;
+		
+		
+	}
+	n = prev;
+	return n;
+	
+}
+
+5. Write a function to identify the middle node of the linkedlist
+
+Node middle(){
+	Node s=head, f=head;
+	while(f != null && f.next != null){
+		s = s.next;
+		f = f.next.next;
+	}
+	return s;
+}
+
+Time complexity of Linked list:
+---------------------------------
+1. Insertion at the begining : O(1)
+2. Insertion in between or at then end: O(n)
+3. Deletion at the begining : O(1)
+4. Deletion in between or at then end: O(n)
+5. Search in LinkedList : O(n)
+6. Print/Display of LinkList : O(n)
+
+
+Doubly Linked List:
+--------------------
+- A DLL is a data structure that contains nodes with references to both the previous and next nodes.
+-ADV: allows for easy traverse, insertion and deletion in both direction.
+
+Node structure:
+-------------------
+1. data: The data stored in the node.
+2. next: Reference to the next node.
+3. prev: Reference to the previous node.
+
+SLL:
+-------
+-Easy implementation
+-Less memory
+-Traverse in only one direction
+
+DLL:
+-----
+-Not that much easy
+-More memory 
+-Traverse in both direction (forward and backward directions)
+
+DLL Operations:
+---------------
+1. Insertion
+	-At the begining
+	-In between
+	-At the end
+2. Deletion
+	-At the begining
+	-In between
+	-At the end
+3. Traversal
+	-Forward
+	-Backward
+	
+	
+Node structure:
+-----------------
+
+class Node{
+	int data;
+	Node next;
+	Node prev;
+	
+	Node(int d){
+		data = d;
+		next = prev = null;
+		
+	}
+}
+
+
+ 1. Insertion
+	-insert() : At the begining
+
+
+	void insert(int new_data){
+		Node new_node = new Node(new_data);
+		new_node.next = head;
+		new_node.prev = null;
+		if(head != null)
+				head.prev = new_node;
+		head = new_node;
+		
+		
+	}
