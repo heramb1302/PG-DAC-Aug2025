@@ -74,7 +74,7 @@
 
 ---
 
-⚡ **Key Points**:
+ **Key Points**:
 
 * Circular Queue uses **modulo (%)** to wrap indices.
 * **Advantage over Linear Queue** → no wasted space after deletions.
