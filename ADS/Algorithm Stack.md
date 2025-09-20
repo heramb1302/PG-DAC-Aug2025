@@ -1,6 +1,6 @@
 # Stack
 
-# 🔹 1. **Traversal of a Stack (Display elements)**
+#  1. **Traversal of a Stack (Display elements)**
 
 *(Assume stack implemented with array and `top` is index of last element)*
 
@@ -19,7 +19,7 @@
 
 ---
 
-# 🔹 2. **Insertion (Push operation)**
+#  2. **Insertion (Push operation)**
 
 ```
 1. Start
@@ -33,7 +33,7 @@
 
 ---
 
-# 🔹 3. **Deletion (Pop operation)**
+#  3. **Deletion (Pop operation)**
 
 ```
 1. Start
