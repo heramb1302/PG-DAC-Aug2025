@@ -67,6 +67,7 @@
 ## **Binary Search Algorithm**
 
 **Input:** Sorted array `A[0..n-1]`, element `X` to search
+
 **Output:** Index of `X` if found, else -1
 
 ```
@@ -98,6 +99,7 @@ Key Points:
 ## **Recursive Binary Search Algorithm**
 
 **Input:** Sorted array `A[0..n-1]`, element `X`, low index `low`, high index `high`
+
 **Output:** Index of `X` if found, else -1
 
 ```
