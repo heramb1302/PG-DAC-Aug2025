@@ -553,3 +553,230 @@ class Node{
 		
 		
 	}
+Date: 20/09/2025
+-------------------------------------
+Day 5: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- LinkedList
+	- Doubly LinkedList
+Doubly Linked List:
+--------------------
+- A DLL is a data structure that contains nodes with references to both the previous and next nodes.
+-ADV: allows for easy traverse, insertion and deletion in both direction.
+
+Node structure:
+-------------------
+1. data: The data stored in the node.
+2. next: Reference to the next node.
+3. prev: Reference to the previous node.
+
+SLL:
+-------
+-Easy implementation
+-Less memory
+-Traverse in only one direction
+
+DLL:
+-----
+-Not that much easy
+-More memory 
+-Traverse in both direction (forward and backward directions)
+
+DLL Operations:
+---------------
+1. Insertion
+	-At the begining
+	-In between
+	-At the end
+2. Deletion
+	-At the begining
+	-In between
+	-At the end
+3. Traversal
+	-Forward
+	-Backward
+	
+	
+Node structure:
+-----------------
+
+class Node{
+	int data;
+	Node next;
+	Node prev;
+	
+	Node(int d){
+		data = d;
+		next = prev = null;
+		
+	}
+}
+
+
+ 1. Insertion
+	-insert() : At the begining
+
+
+
+
+
+
+
+
+	
+	void insert(int new_data){
+		Node new_node = new Node(new_data);
+		new_node.next = head;
+		new_node.prev = null;
+		if(head != null)
+				head.prev = new_node;
+		head = new_node;
+		
+		
+	}
+	
+-insertAfter() : Insertion in between the nodes
+
+
+void insertAfter(Node prev_node,int new_data){
+	//Node is existing or not
+	if(prev_node == null){
+		System.out.println("Insertion possible nahi hai!!!");
+		return;
+	}
+	Node new_node = new Node(new_data);
+	new_node.next = prev_node.next;
+	prev_node.next = new_node;
+	
+	new_node.prev = prev_node;
+	if(new_node.next != null)
+		new_node.next.prev = new_node;
+}
+
+-append():At the end
+
+void append(int new_data){
+	Node new_node = new Node(new_data);
+	Node last = head;
+	new_node.next = null;
+	//DLL empty hot hai tab
+	if(head == null){
+		new_node.prev = null;
+		head = new_node;
+		return;
+	}
+	while(last.next != null){
+		last = last.next;
+	}
+	last.next = new_node;
+	new_node.prev = last;
+		
+	
+	
+	
+}
+
+Traversal:
+---------------------
+1. Forward traversal
+2. Backward traversal
+
+void display(Node n){
+	Node last = null;
+	System.out.print();
+	System.out.print("Forward traversal");
+	while(n != null){
+		System.out.print(n.data+"--->");
+		last = n;
+		n=n.next;
+	}
+	System.out.print("Backward traversal");
+	while(last != null){
+		System.out.print(last.data+"<---");
+		last = last.prev;
+		
+	}
+	System.out.print();
+}
+
+2. Deletion
+	-At the begining
+	-In between
+	-At the end
+	
+	void deleteNode(Node del){
+		//base condition
+		if(head == null || del == null)
+			return;
+		
+		if(head == del){
+			head = del.next;
+		}
+		
+		if(del.next != null){
+			del.next.prev = del.prev;
+		}
+		
+		if(del.prev != null){
+			del.prev.next = del.next;
+		}
+		return;
+		
+	}
+
+
+
+
+
+
+
+
+
+
+Circular LinkedList:
+--------------------
+-A circular LL is a type of linked list where the last node points to the first node of the list.
+-No null reference for next pointer.
+-efficient traversal as you can keep revisiting the nodes.
+
+Node structure:
+-----------------
+1. data : store the value of the node
+2. next: Reference to the next node int he list.
+
+
+class Node{
+	int data;
+	Node next;
+	
+	Node(int data){
+		data = data;
+		next = null;
+	}
+}
+
+Backtracking:
+---------------
+
+ABC:Recursion (Backtracking)
+
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+
+-A problem-solving approach that explores all possible solutions and selects the best or desired one.
+-Used for problems with multiple solutions or those requiring all possible solutions.
+-Backtracking suggest eliminating unsuitable solutions and returning to try other possibilities.
+
+Ex:
+- Permutations 
+- N Queen Problem
+- Rat in Maze Problem
+- Subset sum problem
+- Sudoku solving 
+- Tug of war
+- Word break problem
