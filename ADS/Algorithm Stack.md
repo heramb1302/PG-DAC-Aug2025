@@ -55,6 +55,27 @@
 * Pop → Remove from top.
 * Traversal → Print from `top` down to `0`.
 
+
 ---
 
+#  Stack Operations – Algorithm & Time Complexity
+
+| **Operation**     | **Algorithm**                                | **Time Complexity** |
+| ----------------- | -------------------------------------------- | ------------------- |
+| **Push (Insert)** | Increment `top`, assign `stack[top] = value` | **O(1)**            |
+| **Pop (Delete)**  | Return `stack[top]`, decrement `top`         | **O(1)**            |
+| **Peek/Top**      | Return `stack[top]` (without deletion)       | **O(1)**            |
+| **Traversal**     | Loop from `top` to `0`, print elements       | **O(n)**            |
+| **isEmpty**       | Check if `top == -1`                         | **O(1)**            |
+| **isFull**        | Check if `top == MAX-1`                      | **O(1)**            |
+
+---
+
+ **Key Pointer**:
+
+* Stack is a **LIFO structure** (Last In, First Out).
+* All major operations (Push, Pop, Peek) are **constant time O(1)**.
+* Traversal is **linear O(n)** since all elements must be visited.
+
+---
 
