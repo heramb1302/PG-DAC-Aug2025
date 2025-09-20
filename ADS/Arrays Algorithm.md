@@ -64,10 +64,6 @@
 
 ---
 
-Here’s the **algorithm for Binary Search** (works on a **sorted array** only):
-
----
-
 ## **Binary Search Algorithm**
 
 **Input:** Sorted array `A[0..n-1]`, element `X` to search
