@@ -954,3 +954,104 @@ void insert(int key){
 		 }
 		 return x;
 	 }
+Date: 24/09/2025
+-------------------------------------
+Day 8: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- Sorting
+	
+Sorting: 
+-The process of arranging the data in ascending or descending order.
+-Sorting algorithms 2 classes:
+	1. Comparision based sorting
+	2. Non-comparision based sorting
+
+1. Bubble sorting
+2. Insertion sorting
+3. Selection sorting
+4. Merge sorting
+5. Quick sorting
+6. Heap sorting
+
+Two categories for sorting: 
+----------------------------
+1. Internal sorting
+2. External sorting
+
+1. Internal sorting:
+---------------------
+-Sorting techniques where entire dataset is stored and processed in the main memory (RAM)
+-Ex: Bubble sort, Selection sort, Insertion sort
+-small dataset : fit in RAM
+
+
+2. External sorting:
+--------------------
+-Sorting where data is too large to fit in RAM and is processed using external storage 
+-Ex: Merge Sort, Multi-way Merge sort, External Quick sort
+-huge dataset that need disk-based processing.
+
+Stable and unstable Sorting:
+-----------------------------
+
+Stable sorting: 
+----------------
+-Maintains the relative order od same (duplicate) elements after sorting.
+
+Unstable sorting:
+--------------------
+-Does not guarantee the relative order of equal elements after sorting.
+
+Internal Sorting:
+Stable:
+	-Bubble sort
+	-Insertion sort
+	-Merge sort
+	-Radix sort
+	-Bucket sort
+	
+Unstable:
+	-Selection sort
+	-Quick sort
+	-Heap sort
+	-Shell sort
+	
+External sorting:
+Stable: 
+	-Externl Merge sort
+	-Polyphase Merge sort
+	
+Unstable : 
+	-External(Repalcement) selection sort
+
+Sorting Algorithms:
+---------------------
+1. Bubble Sort:
+-Repeatedly swaps adjacent elements if they are in the unsorted order.
+
+
+2. Selection sort:
+-Finds the smallest element and places it at the begining.
+
+3. Insertion sort:
+-Insert elements into their correct position
+
+Divide and Conquer:
+--------------------
+-It breaks down the problem into similar sub problem, that means the problem of similar origin, which recursively solves the problem and finally combines the solution.
+-It breaks down into 3 section:
+1. Divide: Divide the problem:
+	-Divide the problem into number of subproblems that are smaller in instance of same type.
+2. Conquer: 
+	-Conquer the subproblem by solving them recursively. It they are small enough, solve the best cases of the problem.
+3. Combine:
+	-combines the solution to the subproblem into the solution for the original problem.
+	
+	
+4. Merge sort:
+- Divide and Conquer Algorithm strategy
+
+
+5. Quick sort:
+- Divide and Conquer
