@@ -780,3 +780,177 @@ Ex:
 - Sudoku solving 
 - Tug of war
 - Word break problem
+
+
+
+Date: 23/09/2025
+-------------------------------------
+Day 7: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- Tree
+	-Binary Tree
+	
+Node structure for Tree:
+-----------------------
+
+
+class Node{
+	int data;
+	Node left, right;
+	
+	Node(int d){
+		data = d;
+		left = right = null;
+	}
+}
+
+Tree Travesals: DFS
+---------------------
+1. Preorder : Root, LC, RC
+	- A, B, C
+	-20, 25, 15, 31, 56
+	
+	//Preorder: Root, LC, RC
+	void preorder(Node n){
+		if(n == null)
+			return;
+		
+		System.out.print(n.data + " ");
+		preorder(n.left);
+		preorder(n.right);
+		
+		
+	}
+	
+2. Inorder : LC, Root, RC
+	-B, A, C
+	-15, 25, 31, 20, 56 	
+	
+	//Inorder: LC, Root, RC
+	void inorder(Node n){
+		if(n == null)
+			return;
+		inorder(n.left);
+		System.out.print(n.data + " ");
+		inorder(n.right);
+		
+		
+	}
+	
+
+	
+3. Postorder : LC, RC, Root
+	- B, C, A
+	-15, 31, 25, 56, 20
+	
+//Postorder: LC, RC, Root, 
+	void postorder(Node n){
+		if(n == null)
+			return;
+		
+		
+		postorder(n.left);
+		postorder(n.right);
+		System.out.print(n.data + " ");
+		
+		
+	}
+	
+	
+	
+Binary Search Tree:
+--------------------
+-BST is abinary tree data structure in which each node has akey and satifies the following properties:
+	1. Left subtree of a node contains only nodes having key values less than the root node. 
+	-LC (key <= Root value)
+	2. Right subtree of a bode contains only nodes having key values more than the root node.
+	-RC (key > Root value)
+	3. Both left and right subtrees must also be a BST
+	
+	
+Time complexity for BST: Balanced BST
+-------------------------------------
+Insertion : O(log n)
+Deletion  : O(log n)
+Searching : O(log n) 
+Traversal : O(n)
+
+
+
+Time complexity for BST: UnBalanced BST
+----------------------------------------
+Worst case : O(n) : Tree is skewed BST
+
+56, 34 ,78, 98, 100, 23,1
+
+
+void insert(int key){
+		root = insertdata(root,key);
+	}
+	
+	Node insertdata(Node root, int key){
+		if (root == null)
+		{
+			root = new Node(key);
+			return root;
+		}
+		if(key < root.data)
+			root.left = insertdata(root.left, key);
+		else if(key > root.data)
+			root.right = insertdata(root.right, key);
+			
+		return root;
+		
+		
+		
+		
+	}
+	
+	Deletion:
+	
+	Case 1: Delete leaf node (no children)
+		-Simply remove the node
+		
+	Case 2: Deletion with one child
+		-Replace the node with it's child
+		
+	Case 3: Deletion with two children
+		-Replace the node with it's in-order successor(smallest node in the right sub tree) or in-order predecessor
+		
+	void delete(int key){
+		root = deletedata(root,key);
+	}
+	
+	Node deletedata(Node root, int key){
+		
+		if(root == null)
+			return;
+		if(key < root.data)
+			root.left = deletedata(root.left, key);
+		else if(key > root.data)
+			root.right = deletedata(root.right, key);
+		else{
+			if(root.left == null)
+				return root.right;
+			if(root.right == null)
+				return root.left;
+			root.data = minvalue(root.right);
+			root.right = deletedata(root.right, root.data);
+			
+			
+		}
+		return root;
+	}
+	
+	 int minvalue(Node root)
+	 {
+		 int x = root.data;
+		 while(root.left != null){
+			 
+			 x = root.left.data;
+			 root=root.left;
+			 
+		 }
+		 return x;
+	 }
