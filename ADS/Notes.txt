@@ -1055,3 +1055,262 @@ Divide and Conquer:
 
 5. Quick sort:
 - Divide and Conquer
+
+
+Date: 25/09/2025
+-------------------------------------
+Day 9: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- Sorting
+	
+4. Merge sort:
+- Divide and Conquer Algorithm strategy
+
+
+5. Quick sort:
+- Divide and Conquer Algorithm strategy
+- use pivote element
+
+5. Heap sort:
+------------------
+
+Node B: LC=
+LC = 2*i = 2*2 = 4
+RC = 2*i+1 = 4+1 = 5
+
+Node E : Parent ? 5/2 = 2.5
+
+Comparision of sorting algorithms:
+--------------------------------------------
+Bubble sort:
+BC: O(n)
+WC: O(n^2)
+AC: O(n^2)
+---
+SC: O(1)
+stable : yes
+-------------------------
+Section sort:
+BC: O(n^2)
+WC: O(n^2)
+AC: O(n^2)
+---
+SC: O(1)
+stable : no
+-------------------------
+Insertion sort:
+BC: O(n)
+WC: O(n^2)
+AC: O(n^2)
+---
+SC: O(1)
+stable : yes
+
+-------------------------
+Merge sort:
+BC: O(nlogn)
+WC: O(nlogn)
+AC: O(nlogn)
+---
+SC: O(n)
+stable : yes
+
+-------------------------
+Quick sort:
+BC: O(nlogn)
+WC: O(n^2)
+AC: O(nlogn)
+---
+SC: O(log n) ~ O(n)
+stable : no
+
+-------------------------
+Heap sort:
+BC: O(nlogn)
+WC: O(nlogn)
+AC: O(nlogn)
+---
+SC: O(1)
+stable : no
+
+
+Date: 26/09/2025
+-------------------------------------
+Day 10: Algorithms and Data Structure
+-------------------------------------
+Topic:
+	- Stack
+	- Queue
+	
+Stack:
+------
+- A linear data structure following LIFO (Last In First Out) principle.
+-Operations: 
+	1. Insertion : PUSH 
+	2. Deletion  : POP
+LIFO : 
+-The last element inserted is the first one to be removed.
+
+Representation of Stack:
+--------------------------
+1. Fixed size stack: Array Implementation
+	-Stack size is fixed, which cannot grow and shrink
+	-Overflow occurs when attempting to add an elements to the full stack
+	-Underflow occurs when attempting to remove an element from an empty stack
+	
+2. Dynamic size stack: Linkedlist Implementations
+	-can grow and shrink dynamically
+	-Automatically resizes when full or empty
+	
+Stack Operation:
+---------------
+	-push(): Insert an element into the stack
+	-pop(): Remove the top element from the stack
+	-top()/peek():Retrive the top element without removing it.
+	-isEmpty():Check if stack is empty
+	-isFull()Check if the stack is full
+	-display():Print the stack elements
+	
+	
+Time Complexity:
+------------------
+Array Implementation :
+-----------------------
+Push(): O(1)
+Pop(): O(1)
+Top()/Peek(): O(1)
+
+
+LinkedList Implementation :
+-----------------------
+Push(): O(1)
+Pop(): O(1)
+Top()/Peek(): O(1)
+
+
+Applications:
+-------------
+1. Balancing of symbols:
+2. String reversal
+3. String Palindrome
+4. Recursion
+5. Backtracking
+6. Depth First Search
+7. Expression conversion
+	Infix : A+B
+	Prefix : +AB
+	Postfix: AB+
+	
+	
+Queue:
+------
+-A linear data structure that follws the FIFO (First In First Out) principle
+- ordered collection of homogeneous elements
+-Operations:
+	1. Insertion:
+		-Elements are added at the 'rear' end
+		-reference: rear
+	2. Deletion :
+		-Elements are removed from the 'front' end
+		-reference : front
+-FIFO :
+-The first element added is the first element to be removed.
+
+Representation of Queue:
+-------------------------
+-Array Implementation: 
+	-use 2 ends: front, rear
+
+
+
+
+-Total no elements in queue = rear -front + 1
+-Queue is Empty : front == -1, rear== -1
+			    : FRONT > REAR	
+-ONE ELEMENT IN THE QUESUE:
+FRONT == REAR		
+
+Operations: 
+		1. Insertion : Enqueue
+			-Elements are added from one end : rear
+		2. Deletion : Dequeue
+			-Elements are removed from one end : front
+		3. isFull()
+			-Check if queue is full
+		4. isEmpty()
+			-Check if queue is empty
+		5. count()
+			-gets the count of the total elemts in the queue
+
+Implementations:
+----------------
+	1. Array
+	2. LinkedList
+	3. Collection Framework
+
+
+Time Complexity of Simple Queue:
+-------------------------------
+Enqueue: O(1)
+Dequeue: O(1)
+isEmpty: O(1)
+isFull:  O(1)
+Peek/Front: O(1)
+
+Application:
+--------------
+1. CPU scheduling
+2. BFS
+3. Network queue
+4. Printing Queue
+
+
+Types of Queues:
+------------------
+1. Simple Queue
+
+2. Circular Queue
+
+3. Deque : Doubly Ended queue
+
+4. Priority Queue
+
+Circular Queue:
+----------------
+
+Priority Queue: Data structure  : Heap
+---------------
+	-Min Heap : priority = min value
+	-Max Heap : priority = max value
+	
+Operation:
+---------
+1. Insertion
+2. Deletion
+3. search
+
+A type of queue where each element has apriority value. Elements with higher priority are processed before those with lower priority.
+
+Types of Priority Queue:
+-------------------------
+1. Ascending order priority : Lower values preference 
+
+2. Descending order priority : Higher values preference
+
+Implementation : 
+1. Arrays
+2. Heap
+3. LinkedList
+4. BST
+
+PriorityQueue<Interger> p1 = new PriorityQueue<>();
+
+	p1.add(10);//Insert element in PQ
+	p1.add(20);
+	p1.add(60);
+	p1.add(40);
+	
+	p1.poll();//Remove and return min element
+	
+3. Deque : Doubly Ended queue
